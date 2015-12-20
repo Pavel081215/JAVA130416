@@ -1,13 +1,13 @@
 package ThirdMod;
 
-/**
- * Created by Pavel on 20.12.2015.
- */
-public class Directory {
-    public static void main(String[] args) {
+public class Directory extends File {
+    private File audio;
+    private File text;
+    private File image;
 
-        String file = "аудио";
-
-
+    public Directory(Audio audio, Text text, Image image) {
+        this.audio = audio;
+        this.text = text;
+        this.image = image;
     }
 }
