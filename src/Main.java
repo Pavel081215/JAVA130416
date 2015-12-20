@@ -6,7 +6,7 @@ public class Main {
 
 
 
-        System.out.println("привет");
+        System.out.println("Приверка коммитов");
 
     }
 }
