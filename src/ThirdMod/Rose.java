@@ -1,4 +1,4 @@
 package ThirdMod;
 
-public class Rose extends Flowers {
+public class Rose extends Flower {
 }

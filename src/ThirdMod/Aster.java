@@ -1,5 +1,5 @@
 package ThirdMod;
 
-public class  Aster extends Flowers {
+public class  Aster extends Flower {
 
 }
