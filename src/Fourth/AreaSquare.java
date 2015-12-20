@@ -6,12 +6,12 @@ package Fourth;
 public class AreaSquare {
 
     public static void main(String[] args) {
-        int sidefirst = 4;
-        int sidesecond = 3;
+        int side = 4;
 
-        sidefirst = sidefirst * sidesecond;
 
-        System.out.println("Площадь квадрата  = " + sidefirst );
+        side = side * side;
+
+        System.out.println("Площадь квадрата  = " + side );
 
     }
 
