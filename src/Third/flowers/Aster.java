@@ -1,4 +1,4 @@
-package ThirdMod;
+package Third.flowers;
 
 public class  Aster extends Flower {
 

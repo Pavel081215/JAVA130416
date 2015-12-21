@@ -1,4 +1,4 @@
-package ThirdMod;
+package Third.file;
 
 public class Directory extends File {
     private File audio;
