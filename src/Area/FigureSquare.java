@@ -5,19 +5,16 @@ package Area;
  */
 public class FigureSquare {
     public static float triangleSquare (float side, float height) {
-        height = (height * side)/2;
-        return height;
+         return (height * side)/2;
     }
 
     public static float rectangleSquare (float a, float b) {
-        a = a * b ;
-        return a;
+         return a * b;
     }
 
     public static float circleSquare (float radius) {
         float pi  = 3.14f ;
-        pi = (radius*radius) * pi;
-        return pi;
+        return (radius*radius) * pi;
     }
 }
 
