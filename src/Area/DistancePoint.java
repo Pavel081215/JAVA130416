@@ -5,8 +5,8 @@ package Area;
  */
 public class DistancePoint {
     public static double distancePointCoordinates (float ax ,float ay , float bx ,float by ) {
-        double sqrt;
-        sqrt =  Math.sqrt((bx - ax) *(bx - ax)) +((by - ay) *(by - ay));
-        return sqrt;
+        //double sqrt;
+       // sqrt =  Math.sqrt((bx - ax) *(bx - ax)) +((by - ay) *(by - ay));
+        return Math.sqrt((bx - ax) *(bx - ax)) +((by - ay) *(by - ay));
     }
 }
