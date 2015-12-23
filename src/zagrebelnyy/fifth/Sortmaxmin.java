@@ -1,6 +1,6 @@
 package zagrebelnyy.fifth;
 
-public class SortMaxMin {
+public class Sortmaxmin {
     public static int maxSort(int[] a) {
         int max = a[0];
         for (int q = 0; q < a.length-1; q++) {
@@ -18,6 +18,6 @@ public class SortMaxMin {
                 min = a[q+1];
             }
         }
-        return min;
+        return min   ;
     }
 }
