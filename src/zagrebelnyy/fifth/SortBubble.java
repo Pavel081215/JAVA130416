@@ -1,8 +1,6 @@
 package zagrebelnyy.fifth;
 
-/**
- * Created by P.Zagrebelniy on 24.12.2015.
- */
+
 public class SortBubble {
     public static int[] bubbleSortFirst(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
