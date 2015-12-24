@@ -9,17 +9,9 @@ public class Check {
         System.out.println(TemperatureDegrees.celsiusFahrenhei(3));
         System.out.println(TemperatureDegrees.fahrenheitCelsius(5));
         System.out.println(FigureSquare.circleSquare(45));
-        System.out.println(FigureSquare.rectangleSquare(45,34));
-        System.out.println(FigureSquare.triangleSquare(45,3));
-        System.out.println(DistancePoint.distancePointCoordinates(34,34,56,78));
-
-
-
-
-
-
-
-
+        System.out.println(FigureSquare.rectangleSquare(45, 34));
+        System.out.println(FigureSquare.triangleSquare(45, 3));
+        System.out.println(DistancePoint.distancePointCoordinates(34, 34, 56, 78));
 
 
     }
