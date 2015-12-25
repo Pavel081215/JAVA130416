@@ -25,7 +25,7 @@ public class Directory extends File {
             }
             //    }
 
-            if (namematches.equals(null)) {
+            if (namematches == null) {
                throw new FileNotFoundException(name);
             }
 
