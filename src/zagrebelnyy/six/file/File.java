@@ -1,6 +1,6 @@
 package zagrebelnyy.six.file;
 
-public class File {
+public abstract class File {
     private String name;
 
     public File(String name) {

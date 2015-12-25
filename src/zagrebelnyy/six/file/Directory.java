@@ -2,7 +2,7 @@ package zagrebelnyy.six.file;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
-public  class Directory extends File {
+public class Directory extends File {
 
     private String name;
     private File[] files;
@@ -11,7 +11,7 @@ public  class Directory extends File {
         super(name);
     }
 
-    public  void setFiles(File[] all) {
+    public void setFiles(File[] all) {
         files = all;
     }
 
