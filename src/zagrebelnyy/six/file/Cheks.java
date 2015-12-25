@@ -8,15 +8,15 @@ import java.lang.reflect.Array;
 public class Cheks {
     public static void main(String[] args) {
 
-        File a = new Audio("Gh");
-        File f = new Image("y");
-        File k = new Text("i");
+        File first = new Audio("first");
+        File second = new Image("Second");
+        File third = new Text("Third");
 
-        Directory d = new Directory("4");
-        File[] All = {a, f, k};
+        Directory d = new Directory("Fifth");
+        File[] All = {first, second, third};
         d.setFiles(All);
         try {
-            System.out.println(d.getFile("y"));
+            System.out.println(d.getFile("Third"));
         }catch (FileNotFoundException e){
             String m = "Ошибка значения";
 

@@ -17,26 +17,14 @@ public class Directory extends File {
 
     public String getFile(String fileName) throws FileNotFoundException {
         String namematches = null;
-        // try {
 
         for (int i = 0; i < files.length; i++) {
             if (files[i].getName().equals(fileName)) {
                 namematches = files[i].getName();
             }
-            //    }
-
-            if (namematches == null) {
-               throw new FileNotFoundException(name);
-            }
-
-
-    /*    } catch (FileNotFoundException e) {
-
-            String m = "Ошибка ввода имени";
-
-            System.out.println(m);
-     }*/
-
+        }
+        if (namematches == null) {
+            throw new FileNotFoundException(name);
         }
         return namematches;
     }
