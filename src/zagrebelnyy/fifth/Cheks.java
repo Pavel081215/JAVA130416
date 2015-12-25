@@ -10,7 +10,16 @@ public class Cheks {
         System.out.println(GetMaxMin.getMin(w));
         SortBubble.bubbleSortFirst(w);
         for (int i = 0; i < w.length; i++) {
-            System.out.println(w[i]);
+            System.out.print("    ");
+            System.out.print(w[i]);
+        }
+
+        SortBubble.bubbleSortSecond(w);
+        System.out.println("    ");
+        for (int j = 0; j < w.length; j++) {
+            System.out.print("    ");
+            System.out.print(w[j]);
+
         }
 
 
