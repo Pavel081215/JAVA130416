@@ -5,12 +5,12 @@ import java.io.FileNotFoundException;
 public abstract class File {
     private String name;
 
-    public File(String name) throws FileNotFoundException {
+    public File(String name) throws WrongFileNameException {
 
         if (name != null) {
             this.name = name;
         } else {
-            throw new FileNotFoundException(name);
+            throw new WrongFileNameException(name);
         }
     }
 
