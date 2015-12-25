@@ -16,7 +16,7 @@ public class Cheks {
         File[] All = {a, f, k};
         d.setFiles(All);
         try {
-            System.out.println(d.getFile("kkk"));
+            System.out.println(d.getFile("3"));
         }catch (FileNotFoundException e){
             String m = "Ошибка ввода имени";
 
