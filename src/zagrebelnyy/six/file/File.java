@@ -3,6 +3,9 @@ package zagrebelnyy.six.file;
 import java.io.FileNotFoundException;
 
 public abstract class File {
+
+
+
     private String name;
 
     public File(String name) throws WrongFileNameException {
@@ -14,6 +17,7 @@ public abstract class File {
 
         }
     }
+
 
     public String getName() {
         return name;
