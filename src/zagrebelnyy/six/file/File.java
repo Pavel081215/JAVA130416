@@ -7,10 +7,11 @@ public abstract class File {
 
     public File(String name) throws WrongFileNameException {
 
-        if (name != null) {
-            this.name = name;
-        } else {
+        if (name == null || name.isEmpty() ) {
             throw new WrongFileNameException(name);
+        } else {
+            this.name = name;
+
         }
     }
 
