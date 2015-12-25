@@ -15,6 +15,13 @@ public class Cheks {
         Directory d = new Directory("4");
         File[] All = {a, f, k};
         d.setFiles(All);
-        System.out.println(d.getFile("Gh"));
+        try {
+            System.out.println(d.getFile("kkk"));
+        }catch (FileNotFoundException e){
+            String m = "Ошибка ввода имени";
+
+            System.out.println(m);
+        }
+
     }
 }

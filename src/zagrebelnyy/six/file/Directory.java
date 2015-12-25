@@ -15,7 +15,7 @@ public class Directory extends File {
         files = all;
     }
 
-    public String getFile(String fileName) {
+    public String getFile(String fileName)  throws FileNotFoundException {
         String namematches = null;
         try {
 
@@ -26,7 +26,7 @@ public class Directory extends File {
             }
 
             if (namematches.equals(null)) {
-                throw new FileNotFoundException(name);
+               throw new FileNotFoundException(name);
             }
 
 
