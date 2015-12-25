@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 public class Directory extends File {
 
-    private String name;
+
     private File[] files;
 
     public Directory(String name) {
@@ -27,7 +27,7 @@ public class Directory extends File {
             }
         }
         if (inform == null) {
-            throw new FileNotFoundException(name);
+            throw new FileNotFoundException(fileName);
         }
         return inform;
     }
