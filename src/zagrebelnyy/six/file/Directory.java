@@ -2,6 +2,8 @@ package zagrebelnyy.six.file;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.io.FileNotFoundException;
+
 public class Directory extends File {
 
     private String name;
@@ -16,17 +18,18 @@ public class Directory extends File {
     }
 
     public String getFile(String fileName) throws FileNotFoundException {
-        String namematches = null;
+        String inform = null;
 
         for (int i = 0; i < files.length; i++) {
             if (files[i].getName().equals(fileName)) {
-                namematches = files[i].getName();
+                inform = files[i].getName();
+                break;
             }
         }
-        if (namematches == null) {
+        if (inform == null) {
             throw new FileNotFoundException(name);
         }
-        return namematches;
+        return inform;
     }
 }
 

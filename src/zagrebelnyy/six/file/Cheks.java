@@ -1,5 +1,6 @@
 package zagrebelnyy.six.file;
 
+import java.io.FileNotFoundException;
 import java.lang.reflect.Array;
 
 /**
