@@ -1,5 +1,7 @@
 package zagrebelnyy.six.file;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 public class Directory extends File {
 
     private String name;
@@ -23,14 +25,16 @@ public class Directory extends File {
                 }
             }
 
-            if (namematches == null) {
+            if (namematches.equals(null)) {
                 throw new FileNotFoundException(name);
             }
 
 
         } catch (FileNotFoundException e) {
 
-            System.out.println("Ошибка несовпадает Имя");
+            String m = "Ошибка ввода имени";
+
+            System.out.println(m);
         }
         return namematches;
     }
