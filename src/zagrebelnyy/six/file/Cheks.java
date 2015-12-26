@@ -1,15 +1,11 @@
 package zagrebelnyy.six.file;
 
 import java.io.FileNotFoundException;
-import java.lang.reflect.Array;
 
-/**
- * Created by P.Zagrebelniy on 25.12.2015.
- */
 public class Cheks {
-    public static void main(String[] args) throws WrongFileNameException{
+    public static void main(String[] args) throws WrongFileNameException {
 
-        File first = new Audio("first");
+        File first = new Audio("First");
         File second = new Image("Second");
         File third = new Text("Third");
 
@@ -19,7 +15,7 @@ public class Cheks {
         File[] All = {first, second, third};
         d.setFiles(All);
         try {
-            System.out.println(d.getFile("Third"));
+            System.out.println(d.getFile("First"));
         } catch (FileNotFoundException e) {
             String m = "Ошибка значения";
 

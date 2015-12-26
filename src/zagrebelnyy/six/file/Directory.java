@@ -1,6 +1,5 @@
 package zagrebelnyy.six.file;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.io.FileNotFoundException;
 
@@ -17,7 +16,7 @@ public class Directory extends File {
         files = all;
     }
 
-    public String getFile(String fileName) throws FileNotFoundException  {
+    public String getFile(String fileName) throws FileNotFoundException {
         String inform = null;
 
         for (int i = 0; i < files.length; i++) {

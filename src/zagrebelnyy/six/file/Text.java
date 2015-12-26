@@ -1,8 +1,8 @@
 package zagrebelnyy.six.file;
 
-public class Text  extends File {
+public class Text extends File {
 
-    public Text (String name)throws WrongFileNameException {
-        super (name);
+    public Text(String name) throws WrongFileNameException {
+        super(name);
     }
 }
