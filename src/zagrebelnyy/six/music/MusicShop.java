@@ -1,13 +1,21 @@
 package zagrebelnyy.six.music;
 
 public class MusicShop {
-    int quantity;
-    MusicInstrument[] all;
+    private int quantity;
 
-    public MusicShop(int quantity, MusicInstrument[] all) {
+
+    private MusicInstrument[] allInsrtument;
+
+
+    public MusicShop(int quantity, MusicInstrument[] allInsrtument) {
         this.quantity = quantity;
-        this.all = all;
+        this.allInsrtument = allInsrtument;
     }
+
+    public MusicInstrument[] getAllInsrtument() {
+        return allInsrtument;
+    }
+
 
     public String checkQuantity(int quantity, MusicInstrument[] all) throws MatchesQuantityExcption {
         String info;
