@@ -1,13 +1,23 @@
 package zagrebelnyy.six.music;
 
 public class MusicShop {
-    private MusicInstrument guitar;
-    private MusicInstrument piano;
-    private MusicInstrument trumpet;
+    int quantity;
+    MusicInstrument[] all;
 
-    public MusicShop(MusicInstrument guitar, MusicInstrument piano, MusicInstrument trumpet) {
-        this.guitar = guitar;
-        this.piano = piano;
-        this.trumpet = trumpet;
+    public MusicShop(int quantity, MusicInstrument[] all) {
+        this.quantity = quantity;
+        this.all = all;
     }
+
+    public String checkQuantity(int quantity, MusicInstrument[] all) throws MatchesQuantityExcption {
+        String info;
+        if (quantity == all.length) {
+            info = "Количестов инструментов соврадает";
+        } else {
+            throw new MatchesQuantityExcption();
+        }
+        return info;
+    }
+
+
 }
