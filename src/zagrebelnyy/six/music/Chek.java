@@ -1,6 +1,6 @@
 package zagrebelnyy.six.music;
 
-public class Check {
+public class Chek {
     public static void main(String[] args) {
 
 
