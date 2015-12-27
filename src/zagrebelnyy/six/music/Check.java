@@ -26,7 +26,7 @@ public class Check {
         try {
             musicShop.checkQuantity(3, musicShop.getAllInsrtument());
             System.out.println("Всё нормально");
-        } catch (MatchesQuantityExcption e) {
+        } catch (MatchesQuantityException e) {
             System.out.println("Нет нужного количества");
         }
 

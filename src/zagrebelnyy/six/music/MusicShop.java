@@ -17,12 +17,12 @@ public class MusicShop {
     }
 
 
-    public String checkQuantity(int quantity, MusicInstrument[] all) throws MatchesQuantityExcption {
+    public String checkQuantity(int quantity, MusicInstrument[] all) throws MatchesQuantityException {
         String info;
         if (quantity == all.length) {
             info = "Количестов инструментов соврадает";
         } else {
-            throw new MatchesQuantityExcption();
+            throw new MatchesQuantityException();
         }
         return info;
     }
