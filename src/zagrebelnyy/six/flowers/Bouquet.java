@@ -15,6 +15,7 @@ public class Bouquet {
     }
 
     public void setFlower(Flower[] all) {
+
         bouqet = all;
     }
 

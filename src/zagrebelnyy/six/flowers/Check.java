@@ -1,8 +1,6 @@
 package zagrebelnyy.six.flowers;
 
-/**
- * Created by Pavel on 26.12.2015.
- */
+
 public class Check {
     public static void main(String[] args) {
         Bouquet bouquet = new Bouquet("Red");
