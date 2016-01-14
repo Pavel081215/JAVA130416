@@ -14,12 +14,12 @@ public class CheksBuble {
 
         SortBubble.bubbleSortIncrease(first);
         PrintCheks.printCheks(" Общий №1(Убывание) - контрольный   ", first);
-        SortBubble.bubbleSortIncreaseUniversal(second);
+        SortBubble.bubbleSortIncreaseLightRefactor(second);
         PrintCheks.printCheks(" С методом №1 (Убывание) универсальный ", second);
 
         SortBubble.bubbleSortDecrease(first1);
         PrintCheks.printCheks(" Общий №2 (Увеличение) - контрольный   ", first1);
-        SortBubble.bubbleSortDecreaseUniversal(second1);
+        SortBubble.bubbleSortDecreaseLightRefactor(second1);
         PrintCheks.printCheks(" С методом №2 (Увеличение) универсальный ", second1);
 
     }

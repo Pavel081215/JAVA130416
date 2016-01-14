@@ -14,21 +14,17 @@ public class SortBubble {
         }
         return arr;
     }
-    public static int[] bubbleSortDecreaseUniversal(int[] arr) {
+
+    public static int[] bubbleSortDecreaseLightRefactor(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    substitutionNewValues(arr,j);
+                    changeArrayElements(arr, j);
                 }
             }
         }
         return arr;
     }
-
-
-
-
-
 
 
     public static int[] bubbleSortIncrease(int[] arr) {
@@ -46,11 +42,11 @@ public class SortBubble {
     }
 
 
-    public static int[] bubbleSortIncreaseUniversal(int[] arr) {
+    public static int[] bubbleSortIncreaseLightRefactor(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] < arr[j + 1]) {
-                    substitutionNewValues(arr,j);
+                    changeArrayElements(arr, j);
                 }
 
             }
@@ -59,17 +55,11 @@ public class SortBubble {
     }
 
 
-
-
-
-
-
-
-    public static int[] substitutionNewValues(int[] arr, int index) {
+    public static int[] changeArrayElements(int[] arr, int index) {
         int temp = arr[index];
         arr[index] = arr[index + 1];
         arr[index + 1] = temp;
         return arr;
-            }
+    }
 }
 
