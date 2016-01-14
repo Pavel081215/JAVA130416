@@ -2,7 +2,7 @@ package zagrebelnyy.seven;
 
 
 public class SortBubble {
-    public static int[] bubbleSortFirst(int[] arr) {
+    public static int[] bubbleSortDecrease(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -14,11 +14,11 @@ public class SortBubble {
         }
         return arr;
     }
-    public static int[] bubbleSortFirstUniversal(int[] arr) {
+    public static int[] bubbleSortDecreaseUniversal(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    substitutionNewValues(arr[j], arr[j + 1]);
+                    substitutionNewValues(arr,j);
                 }
             }
         }
@@ -27,7 +27,11 @@ public class SortBubble {
 
 
 
-    public static int[] bubbleSortSecond(int[] arr) {
+
+
+
+
+    public static int[] bubbleSortIncrease(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] < arr[j + 1]) {
@@ -42,11 +46,11 @@ public class SortBubble {
     }
 
 
-    public static int[] bubbleSortSecondUniversal(int[] arr) {
+    public static int[] bubbleSortIncreaseUniversal(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] < arr[j + 1]) {
-                    substitutionNewValues(arr[j], arr[j + 1]);
+                    substitutionNewValues(arr,j);
                 }
 
             }
@@ -55,11 +59,17 @@ public class SortBubble {
     }
 
 
-    public static void substitutionNewValues(int valueFirst, int valueSecond) {
-        int temp = valueFirst;
-        valueFirst = valueSecond;
-        valueSecond = temp;
 
-    }
+
+
+
+
+
+    public static int[] substitutionNewValues(int[] arr, int index) {
+        int temp = arr[index];
+        arr[index] = arr[index + 1];
+        arr[index + 1] = temp;
+        return arr;
+            }
 }
 

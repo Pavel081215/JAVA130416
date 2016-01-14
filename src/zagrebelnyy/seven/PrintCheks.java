@@ -5,12 +5,12 @@ package zagrebelnyy.seven;
  */
 public class PrintCheks {
 
-    public static void printCheks(String name, int[] training) {
+    public static void printCheks(String name, int[] train) {
 
         System.out.println(name);
-        for (int j = 0; j < training.length; j++) {
+        for (int j = 0; j < train.length; j++) {
             System.out.print("    ");
-            System.out.print(training[j]);
+            System.out.print(train[j]);
         }
         System.out.println("");
     }

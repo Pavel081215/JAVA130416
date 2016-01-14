@@ -5,23 +5,22 @@ package zagrebelnyy.seven;
  */
 public class CheksBuble {
     public static void main(String[] args) {
-        int[] training = {-1222, 3333533, 3, 4, 655555555, 7, -8888, 5, 2, 22, 44, 999999999};
-        //Создаються 4 массива - одинаковых, каждый будет изменён в своём методе, результат должен быть одинакоый
-        int[] first = training;
-        int[] second = training;
-        int[] first1 = training;
-        int[] second1 = training;
 
+        //Создаються 4 массива - одинаковых, каждый будет изменён в своём методе, результат должен быть одинакоый для первых двух и следующих  двух
+        int[] first = {-1222, 3333533, 3, 4, 655555555, 7, -8888, 5, 2, 22, 44, 999999999};
+        int[] second = {-1222, 3333533, 3, 4, 655555555, 7, -8888, 5, 2, 22, 44, 999999999};
+        int[] first1 = {-1222, 3333533, 3, 4, 655555555, 7, -8888, 5, 2, 22, 44, 999999999};
+        int[] second1 = {-1222, 3333533, 3, 4, 655555555, 7, -8888, 5, 2, 22, 44, 999999999};
 
-        SortBubble.bubbleSortSecond(first);
-        PrintCheks.printCheks(" Общий №1 - контрольный   ", first);
-        SortBubble.bubbleSortSecondUniversal(second);
-        PrintCheks.printCheks(" С методом №1  универсальный ", second);
+        SortBubble.bubbleSortIncrease(first);
+        PrintCheks.printCheks(" Общий №1(Убывание) - контрольный   ", first);
+        SortBubble.bubbleSortIncreaseUniversal(second);
+        PrintCheks.printCheks(" С методом №1 (Убывание) универсальный ", second);
 
-        SortBubble.bubbleSortFirst (first);
-        PrintCheks.printCheks(" Общий №2 - контрольный   ", first1);
-        SortBubble.bubbleSortFirstUniversal(second);
-        PrintCheks.printCheks(" С методом №2  универсальный ", second1);
+        SortBubble.bubbleSortDecrease(first1);
+        PrintCheks.printCheks(" Общий №2 (Увеличение) - контрольный   ", first1);
+        SortBubble.bubbleSortDecreaseUniversal(second1);
+        PrintCheks.printCheks(" С методом №2 (Увеличение) универсальный ", second1);
 
     }
 }
