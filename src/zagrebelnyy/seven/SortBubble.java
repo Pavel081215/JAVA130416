@@ -2,38 +2,23 @@ package zagrebelnyy.seven;
 
 
 public class SortBubble {
+
     public static int[] bubbleSortDecrease(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] > arr[j + 1]) {
-                    int t = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = t;
+                    changeArrayElements(arr, j, j+1);
                 }
             }
         }
         return arr;
     }
-
-    public static int[] bubbleSortDecreaseLightRefactor(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    changeArrayElements(arr, j);
-                }
-            }
-        }
-        return arr;
-    }
-
 
     public static int[] bubbleSortIncrease(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr.length - i - 1; j++) {
                 if (arr[j] < arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
+                    changeArrayElements(arr, j, j+1);
                 }
 
             }
@@ -42,23 +27,10 @@ public class SortBubble {
     }
 
 
-    public static int[] bubbleSortIncreaseLightRefactor(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length - i - 1; j++) {
-                if (arr[j] < arr[j + 1]) {
-                    changeArrayElements(arr, j);
-                }
-
-            }
-        }
-        return arr;
-    }
-
-
-    public static int[] changeArrayElements(int[] arr, int index) {
+    public static int[] changeArrayElements(int[] arr, int index,int next ) {
         int temp = arr[index];
-        arr[index] = arr[index + 1];
-        arr[index + 1] = temp;
+        arr[index] = arr[next];
+        arr[next] = temp;
         return arr;
     }
 }
