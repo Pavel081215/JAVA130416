@@ -1,4 +1,4 @@
-package zagrebelnyy.eight.oop.music;
+package zagrebelnyy.eight.oopforme.music;
 
 public class MusicShop {
     private int quantity;

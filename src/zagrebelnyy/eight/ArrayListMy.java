@@ -1,14 +1,14 @@
 package zagrebelnyy.eight;
 
-import zagrebelnyy.eight.oop.file.Audio;
-import zagrebelnyy.eight.oop.file.File;
-import zagrebelnyy.eight.oop.file.Image;
-import zagrebelnyy.eight.oop.file.Text;
-import zagrebelnyy.eight.oop.flowers.*;
-import zagrebelnyy.eight.oop.music.Guitar;
-import zagrebelnyy.eight.oop.music.MusicInstrument;
-import zagrebelnyy.eight.oop.music.Piano;
-import zagrebelnyy.eight.oop.music.Trumpet;
+import zagrebelnyy.eight.oopforme.file.Audio;
+import zagrebelnyy.eight.oopforme.file.File;
+import zagrebelnyy.eight.oopforme.file.Image;
+import zagrebelnyy.eight.oopforme.file.Text;
+import zagrebelnyy.eight.oopforme.flowers.*;
+import zagrebelnyy.eight.oopforme.music.Guitar;
+import zagrebelnyy.eight.oopforme.music.MusicInstrument;
+import zagrebelnyy.eight.oopforme.music.Piano;
+import zagrebelnyy.eight.oopforme.music.Trumpet;
 
 import java.util.ArrayList;
 

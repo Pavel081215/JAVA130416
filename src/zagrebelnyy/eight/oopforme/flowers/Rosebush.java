@@ -1,4 +1,4 @@
-package zagrebelnyy.eight.oop.flowers;
+package zagrebelnyy.eight.oopforme.flowers;
 
 public class Rosebush {
    private Rose vetka1;

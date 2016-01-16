@@ -1,4 +1,4 @@
-package zagrebelnyy.eight.oop.file;
+package zagrebelnyy.eight.oopforme.file;
 
 public class Text extends File {
 

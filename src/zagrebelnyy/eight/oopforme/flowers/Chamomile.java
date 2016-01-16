@@ -1,4 +1,4 @@
-package zagrebelnyy.eight.oop.flowers;
+package zagrebelnyy.eight.oopforme.flowers;
 
 /**
  * Created by Pavel on 20.12.2015.
