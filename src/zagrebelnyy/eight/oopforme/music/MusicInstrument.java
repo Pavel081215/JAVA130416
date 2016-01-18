@@ -47,5 +47,19 @@ public abstract class MusicInstrument {
         return musicInstrument;
     }
 
+    public static void print (ArrayList <MusicInstrument> arrayMusic) {
+        System.out.println(arrayMusic);
+        System.out.println("=============================");
+        System.out.println("| Name      |  Price        |");
+        System.out.println("=============================");
+        for (MusicInstrument element : arrayMusic) {
+            System.out.print("|" + element.getName() + "\t" + "|" + "\t" + element.getPrice() + "\t" + "\t" + "\t" + "|");
+            System.out.println("");
+        }
+        System.out.println("=============================");
+        System.out.println("");
+        System.out.println("");
+    }
+
 
 }

@@ -47,31 +47,10 @@ public class ArrayListForMe {
         arrayFile.add(new Text("Second1"));
 
 
-        System.out.println(arrayMusic);
-        System.out.println("=============================");
-        System.out.println("| Name      |  Price        |");
-        System.out.println("=============================");
-        for (MusicInstrument element : arrayMusic) {
-            System.out.print("|" + element.getName() + "\t" + "|" + "\t" + element.getPrice() + "\t" + "\t" + "\t" + "|");
-            System.out.println("");
-        }
-        System.out.println("=============================");
-        System.out.println("");
-        System.out.println("");
-
+        MusicInstrument.print(arrayMusic);
         MusicInstrument.sortMusicInstrument(arrayMusic);
+        MusicInstrument.print(arrayMusic);
 
-        System.out.println("Отсортированный массив " + arrayMusic);
-        System.out.println("=============================");
-        System.out.println("| Name      | Price         |");
-        System.out.println("=============================");
-        for (MusicInstrument element : arrayMusic) {
-            System.out.print("|" + element.getName() + "\t" + "|" + "\t" + element.getPrice() + "\t" + "\t" + "\t" + "|");
-            System.out.println("               ");
-        }
-        System.out.println("=============================");
-        System.out.println("");
-        System.out.println("");
 
 
         System.out.println(arrayFlowers);
