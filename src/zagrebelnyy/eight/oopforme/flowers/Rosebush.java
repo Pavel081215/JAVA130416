@@ -1,15 +1,22 @@
 package zagrebelnyy.eight.oopforme.flowers;
 
-public class Rosebush {
-    private Rose vetka1;
-    private Rose vetka2;
-    private Rose vetka3;
+import zagrebelnyy.eight.Printable;
 
-    public Rosebush() {
-        vetka1 = new Rose("vetka1", 45);
-        vetka2 = new Rose("vetka3", 45);
-        vetka3 = new Rose("vetka2", 45);
+import java.util.List;
+
+/**
+ * Created by Pavel on 18.01.2016.
+ */
+public class Rosebush extends Flower   implements Printable {
+    private List<Flower>  flower;
+    public Rosebush(String name, int size,List<Flower>  flower ) {
+
+        super(name, size);
+        this.flower = flower;
     }
 
+    @Override
+    public void print() {
 
+    }
 }

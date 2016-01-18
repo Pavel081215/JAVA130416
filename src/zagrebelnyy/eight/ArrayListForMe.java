@@ -51,53 +51,16 @@ public class ArrayListForMe {
         MusicInstrument.sortMusicInstrument(arrayMusic);
         MusicInstrument.print(arrayMusic);
 
-
-
-        System.out.println(arrayFlowers);
-        System.out.println("=============================");
-        System.out.println("| Name      |  Size         |");
-        System.out.println("=============================");
-        for (Flower element : arrayFlowers) {
-            System.out.println("|" + element.getName() + "\f" + "\t" + "\t" + "|" + "\t" + element.getSize() + "\t" + "\t" + "\t");
-        }
-        System.out.println("=============================");
-
-        System.out.println("");
-        System.out.println("");
-
+        Flower.print(arrayFlowers);
         Flower.sortFlowers(arrayFlowers);
-        System.out.println("Отсортированный массив " + arrayFlowers);
-        System.out.println("=============================");
-        System.out.println("| Name      |  Size         |");
-        System.out.println("=============================");
-        for (Flower element : arrayFlowers) {
-            System.out.println("|" + element.getName() + "\f" + "\t" + "\t" + "|" + "\t" + element.getSize() + "\t" + "\t" + "\t");
-        }
-        System.out.println("=============================");
-
-        System.out.println("");
-        System.out.println("");
+        Flower.print(arrayFlowers);
 
 
-        System.out.println(arrayFile);
-        System.out.println("=====================");
-        System.out.println("| Name              |");
-        System.out.println("=====================");
-        for (File element : arrayFile) {
-            System.out.println("|" + element.getName() + "\t" + "\t" + "\t" + "|");
-        }
-        System.out.println("=====================");
 
+        File.print(arrayFile);
         File.sortFile(arrayFile);
-        System.out.println("Отсортированный массив " + arrayFile);
+        File.print(arrayFile);
 
-        System.out.println("=====================");
-        System.out.println("| Name              |");
-        System.out.println("=====================");
-        for (File element : arrayFile) {
-            System.out.println("|" + element.getName() + "\t" + "\t" + "\t" + "|");
-        }
-        System.out.println("=====================");
 
     }
 
