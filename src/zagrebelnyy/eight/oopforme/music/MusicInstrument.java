@@ -1,9 +1,8 @@
 package zagrebelnyy.eight.oopforme.music;
 
-//import zagrebelnyy.seven.SortBubble;
 
 import java.util.ArrayList;
-import java.util.List;
+
 
 public abstract class MusicInstrument {
 
@@ -19,6 +18,10 @@ public abstract class MusicInstrument {
         return price;
     }
 
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
     public String getName() {
         return name;
     }
@@ -29,24 +32,19 @@ public abstract class MusicInstrument {
     }
 
 
-    public ArrayList sort(ArrayList musicInstrument) {
+    public static ArrayList sortMusicInstrument(ArrayList<MusicInstrument> musicInstrument) {
         for (int i = 0; i < musicInstrument.size(); i++) {
             for (int j = 0; j < musicInstrument.size() - i - 1; j++) {
-               // int priceIndex1 = musicInstrument.get(j).getPrice();
-
-                if (musicInstrument.get(j).getPrice() > musicInstrument.get(j -1).getPrice()) {
-
-
-
-                    //changeArrayElements(musicInstrument, j, j + 1);
+                if (musicInstrument.get(j).getPrice() > musicInstrument.get(j + 1).getPrice()) {
+                    MusicInstrument temp = musicInstrument.get(j);
+                    musicInstrument.set(j, musicInstrument.get(j + 1));
+                    musicInstrument.set(j + 1, temp);
                 }
 
             }
         }
         return musicInstrument;
     }
-
-
 
 
 }

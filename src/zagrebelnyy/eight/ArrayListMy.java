@@ -21,9 +21,9 @@ public class ArrayListMy {
 
         ArrayList<MusicInstrument> arrayMusic = new ArrayList<>();
         arrayMusic.add(new Guitar("First1 ", 4));
-        arrayMusic.add(new Piano("First2 ", 5));
+        arrayMusic.add(new Piano("First2 ", 2));
         arrayMusic.add(new Trumpet("First3 ", 8));
-        arrayMusic.add(new Guitar("Second1", 9));
+        arrayMusic.add(new Guitar("Second1", 7));
 
         ArrayList<Flower> arrayFlowers = new ArrayList<>();
         arrayFlowers.add(new Rose("First1 ", 23));
@@ -37,41 +37,67 @@ public class ArrayListMy {
         arrayFile.add(new Text("Second1"));
 
         System.out.println(arrayMusic);
-        System.out.println("===========================");
-        System.out.println("| Name       | Price      |");
-        System.out.println("===========================");
+        System.out.println("=============================");
+        System.out.println("| Name      |  Price        |");
+        System.out.println("=============================");
         for (MusicInstrument element : arrayMusic) {
-            System.out.print("|" + element.getName() + "     | " + element.getPrice() + "          |  ");
+            System.out.print("|" + element.getName()+"\t" + "|" + "\t" + element.getPrice() + "\t" + "\t"+ "\t"+"|");
             System.out.println("               ");
         }
-        System.out.println("===========================");
+        System.out.println("=============================");
         System.out.println("");
         System.out.println("");
+
+        MusicInstrument.sortMusicInstrument(arrayMusic);
+
+        System.out.println(arrayMusic);
+        System.out.println("=============================");
+        System.out.println("| Name      | Price         |");
+        System.out.println("=============================");
+        for (MusicInstrument element : arrayMusic) {
+            System.out.print("|" + element.getName() + "\t" +  "|" + "\t" +  element.getPrice() + "\t" + "\t"+ "\t"+"|");
+            System.out.println("               ");
+        }
+        System.out.println("=============================");
+        System.out.println("");
+        System.out.println("");
+
+
 
 
         System.out.println(arrayFlowers);
-        System.out.println("===========================");
-        System.out.println("| Name       | Size       |");
-        System.out.println("===========================");
+        System.out.println("=============================");
+        System.out.println("| Name      |  Size         |");
+        System.out.println("=============================");
         for (Flower element : arrayFlowers) {
-            System.out.println("|" + element.getName() + "     |  " + element.getSize() + "        |  ");
+            System.out.println("|" + element.getName() + "\t" + "|"+ "\t" + element.getSize() + "\t" + "\t"+ "\t"+ "|");
         }
-        System.out.println("===========================");
+        System.out.println("=============================");
 
         System.out.println("");
         System.out.println("");
 
 
         System.out.println(arrayFile);
-        System.out.println("=======================");
-        System.out.println("| Name                |");
-        System.out.println("=======================");
+        System.out.println("=====================");
+        System.out.println("| Name              |");
+        System.out.println("=====================");
         for (File element : arrayFile) {
-            System.out.println("|" + element.getName() + "              |");
+            System.out.println("|" + element.getName() + "\t" + "\t"+ "\t"+ "|");
         }
-        System.out.println("=======================");
+        System.out.println("=====================");
 
+
+
+       MusicInstrument.sortMusicInstrument(arrayMusic);
     }
+
+
+
+
+
+
+
 
 }
 
