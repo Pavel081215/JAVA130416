@@ -11,7 +11,7 @@ import java.util.List;
 public class MusicShop implements Printable {
     String name;
     int price;
-    private List<MusicInstrument>  musicInstrument;
+    private List<MusicInstrument> musicInstrument;
 
     public MusicShop(String name, int price, List<MusicInstrument> musicInstrument) {
         this.name = name;
@@ -21,6 +21,17 @@ public class MusicShop implements Printable {
 
     @Override
     public void print() {
+
+        System.out.println("=============================");
+        System.out.println("| Name      |  Price        |");
+        System.out.println("=============================");
+        for (MusicInstrument element : musicInstrument) {
+            System.out.print("|" + element.getName() + "\t" + "|" + "\t" + element.getPrice() + "\t" + "\t" + "\t" + "|");
+            System.out.println("");
+        }
+        System.out.println("=============================");
+        System.out.println("");
+        System.out.println("");
 
     }
 }

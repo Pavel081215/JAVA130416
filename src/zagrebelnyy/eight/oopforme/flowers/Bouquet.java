@@ -20,5 +20,16 @@ public class Bouquet   implements Printable {
     @Override
     public void print() {
 
+        System.out.println("=============================");
+        System.out.println("| Name      |  Size         |");
+        System.out.println("=============================");
+        for (Flower element : bouquet) {
+            System.out.println("|" + element.getName() + "\f" + "\t" + "\t" + "|" + "\t" + element.getSize() + "\t" + "\t" + "\t");
+        }
+        System.out.println("=============================");
+
+        System.out.println("");
+        System.out.println("");
+
     }
 }

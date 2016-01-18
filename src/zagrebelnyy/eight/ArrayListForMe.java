@@ -1,14 +1,12 @@
 package zagrebelnyy.eight;
 
-import zagrebelnyy.eight.oopforme.file.Audio;
-import zagrebelnyy.eight.oopforme.file.File;
-import zagrebelnyy.eight.oopforme.file.Image;
-import zagrebelnyy.eight.oopforme.file.Text;
+import zagrebelnyy.eight.oopforme.file.*;
 import zagrebelnyy.eight.oopforme.flowers.*;
 import zagrebelnyy.eight.oopforme.music.Guitar;
 import zagrebelnyy.eight.oopforme.music.MusicInstrument;
 import zagrebelnyy.eight.oopforme.music.Piano;
 import zagrebelnyy.eight.oopforme.music.Trumpet;
+import zagrebelnyy.six.music.MusicShop;
 
 import java.util.ArrayList;
 
@@ -41,11 +39,31 @@ public class ArrayListForMe {
         arrayFlowers.add(new Aster("Aster2    ", 653));
         arrayFlowers.add(new Aster("Aster5    ", 165));
 
+
         ArrayList<File> arrayFile = new ArrayList<>();
         arrayFile.add(new Audio("First12 "));
         arrayFile.add(new Image("First2 "));
         arrayFile.add(new Text("Second1"));
 
+
+        Directory directory = new Directory("First", arrayFile);
+        directory.print();
+
+        Bouquet bouquet = new Bouquet("First", 5, arrayFlowers);
+        bouquet.print();
+
+        MusicShop musicShop = new MusicShop(3,arrayMusic);
+
+
+
+
+
+
+
+
+
+
+        /*
 
         MusicInstrument.print(arrayMusic);
         MusicInstrument.sortMusicInstrument(arrayMusic);
@@ -59,7 +77,7 @@ public class ArrayListForMe {
 
         File.print(arrayFile);
         File.sortFile(arrayFile);
-        File.print(arrayFile);
+        File.print(arrayFile);*/
 
 
     }
