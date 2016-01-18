@@ -20,38 +20,60 @@ public class ArrayListMy {
     public static void main(String[] args) {
 
         ArrayList<MusicInstrument> arrayMusic = new ArrayList<>();
-        arrayMusic.add(new Guitar("First"));
-        arrayMusic.add(new Piano("First"));
-        arrayMusic.add(new Trumpet("First"));
-        arrayMusic.add(new Guitar("Second"));
+        arrayMusic.add(new Guitar("First ", 4));
+        arrayMusic.add(new Piano("First ", 5));
+        arrayMusic.add(new Trumpet("First ", 8));
+        arrayMusic.add(new Guitar("Second", 9));
 
         ArrayList<Flower> arrayFlowers = new ArrayList<>();
-        arrayFlowers.add(new Rose("First",3));
-        arrayFlowers.add(new Tulip("First",5));
-        arrayFlowers.add(new Chamomile("First", 6));
+        arrayFlowers.add(new Rose("First ", 23));
+        arrayFlowers.add(new Tulip("First ", 53));
+        arrayFlowers.add(new Chamomile("First ", 45));
         arrayFlowers.add(new Aster("Second", 65));
 
         ArrayList<File> arrayFile = new ArrayList<>();
-        arrayFile.add(new Audio("First"));
-        arrayFile.add(new Image("First"));
+        arrayFile.add(new Audio("First "));
+        arrayFile.add(new Image("First "));
         arrayFile.add(new Text("Second"));
 
+        System.out.println(arrayMusic);
+        System.out.println("===========================");
+        System.out.println("| Name       | Price      |");
+        System.out.println("===========================");
+        for (MusicInstrument element : arrayMusic) {
+            System.out.print("|" + element.getName() + "      |" + element.getPrice() + "           |  ");
+            System.out.println("               ");
+        }
+        System.out.println("===========================");
+        System.out.println("");
+        System.out.println("");
 
-        for ( MusicInstrument element : arrayMusic) {
-            System.out.println(element.getName());
-        }
-        System.out.println("     ");
-        for ( Flower element : arrayFlowers) {
-            System.out.println(element.getName());
-        }
-        System.out.println("     ");
-        for ( File element : arrayFile) {
-            System.out.println(element.getName());
-        }
 
+        System.out.println(arrayFlowers);
+        System.out.println("===========================");
+        System.out.println("| Name       | Size       |");
+        System.out.println("===========================");
+        for (Flower element : arrayFlowers) {
+            System.out.println("|" + element.getName() + "       |" + element.getSize() + "         |  ");
         }
+        System.out.println("===========================");
+
+        System.out.println("");
+        System.out.println("");
+
+
+        System.out.println(arrayFile);
+        System.out.println("=======================");
+        System.out.println("| Name                |");
+        System.out.println("=======================");
+        for (File element : arrayFile) {
+            System.out.println("|" + element.getName() + "               |");
+        }
+        System.out.println("=======================");
 
     }
+
+}
 
 
 

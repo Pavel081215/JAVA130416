@@ -8,13 +8,12 @@ public abstract class Flower {
     private int size;
 
 
-    public Flower(String name, int size)  {
+    public Flower(String name, int size) {
         this.name = name;
-        if (13 < size && size < 50) {
-            this.size = size;
-        } else {
 
-        }
+        this.size = size;
+
+
     }
 
     public String getName() {
@@ -23,6 +22,11 @@ public abstract class Flower {
 
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public String toString() {
+        return "Flower";
     }
 }
 
