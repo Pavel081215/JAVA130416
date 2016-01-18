@@ -8,10 +8,14 @@ import java.util.List;
 /**
  * Created by Pavel on 18.01.2016.
  */
-public class MusicShop extends MusicInstrument  implements Printable {
-    private List<MusicShop>  musicInstrument;
-    public MusicShop(String name, int price, List<MusicShop> musicInstrument) {
-        super(name,price );
+public class MusicShop implements Printable {
+    String name;
+    int price;
+    private List<MusicInstrument>  musicInstrument;
+
+    public MusicShop(String name, int price, List<MusicInstrument> musicInstrument) {
+        this.name = name;
+        this.price = price;
         this.musicInstrument = musicInstrument;
     }
 
