@@ -15,7 +15,7 @@ import java.util.ArrayList;
 /**
  * Created by Pavel on 16.01.2016.
  */
-public class ArrayListMy {
+public class ArrayListForMe {
 
     public static void main(String[] args) {
 

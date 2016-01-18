@@ -1,9 +1,9 @@
 package zagrebelnyy.six.flowers;
 
 public class Rosebush {
-   private Rose vetka1;
-   private Rose vetka2;
-   private Rose vetka3;
+    private Rose vetka1;
+    private Rose vetka2;
+    private Rose vetka3;
 
     public Rosebush() throws NegativSizeException {
         vetka1 = new Rose("vetka1", 45);
