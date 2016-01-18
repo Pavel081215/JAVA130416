@@ -30,7 +30,6 @@ public class Cheks {
         System.out.println("");
 
 
-
         SortInserts.insertionSort2(training, 1, 6);
         System.out.println("Вставка с пересенными  до -6   ");
         for (int j = 0; j < firth2.length; j++) {
@@ -40,7 +39,6 @@ public class Cheks {
         System.out.println("");
 
 
-
         SortInserts.insertionSort2(training, 6, 10);
         System.out.println("Вставка с пересенными  диапозон (6  10)  ");
         for (int j = 0; j < firth3.length; j++) {
@@ -48,7 +46,6 @@ public class Cheks {
             System.out.print(firth3[j]);
         }
         System.out.println("");
-
 
 
         SortInserts.insertionSort(training);

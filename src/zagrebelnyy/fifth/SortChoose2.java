@@ -26,8 +26,6 @@ public class SortChoose2 {
         }
 
 
-
-
         for (int i = 0; i < size; i++) {
             printWriter.print(a[i] + " ");
         }
