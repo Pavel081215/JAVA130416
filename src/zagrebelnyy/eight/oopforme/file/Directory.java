@@ -22,8 +22,6 @@ public class Directory extends File  implements Printable {
 
     }
 
-    public interface Printable {
-        void print();
-    }
+
 }
 
