@@ -25,7 +25,7 @@ public abstract class File {
         return "File";
     }
 
-    public static ArrayList sortFile(ArrayList<File> file) {
+    public static ArrayList sortByName(ArrayList<File> file) {
         FileUtils.sortFileUtils(file);
         return file;
     }

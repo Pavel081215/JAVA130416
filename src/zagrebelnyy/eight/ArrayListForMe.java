@@ -45,8 +45,8 @@ public class ArrayListForMe {
 
         Directory directory = new Directory("First", arrayFile);
         directory.print();
-        directory.sortFile();
-        // File.sortFile(arrayFile);
+        directory.sortByName();
+      //    File.sortByName(arrayFile);
         directory.print();
 
 
@@ -63,26 +63,8 @@ public class ArrayListForMe {
         musicShop.print();
 
 
-
-
-        /*
-
-        MusicInstrument.print(arrayMusic);
-        MusicInstrument.sortMusicInstrument(arrayMusic);
-        MusicInstrument.print(arrayMusic);
-
-        Flower.print(arrayFlowers);
-        Flower.sortFlowers(arrayFlowers);
-        Flower.print(arrayFlowers);
-
-
-
-        File.print(arrayFile);
-        File.sortFile(arrayFile);
-        File.print(arrayFile);*/
-
-
     }
+
 
 
 }

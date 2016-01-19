@@ -18,7 +18,7 @@ public class Directory extends File implements Printable {
         this.files = files;
     }
 
-    public void sortFile() {
+    public void sortByName() {
         FileUtils.sortFileUtils(files);
     }
 
