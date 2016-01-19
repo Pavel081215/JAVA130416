@@ -13,9 +13,9 @@ public class MusicShop implements Printable {
     int size;
     private List<MusicInstrument> musicInstruments;
 
-    public MusicShop(String name, int price, List<MusicInstrument> musicInstrument) {
+    public MusicShop(String name, int size, List<MusicInstrument> musicInstrument) {
         this.name = name;
-        this.size = price;
+        this.size = size;
         this.musicInstruments = musicInstrument;
     }
 
