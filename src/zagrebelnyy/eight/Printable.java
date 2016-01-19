@@ -6,5 +6,6 @@ package zagrebelnyy.eight;
 
 public interface Printable {
     void print();
+
 }
 

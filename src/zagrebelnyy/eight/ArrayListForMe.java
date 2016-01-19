@@ -45,18 +45,21 @@ public class ArrayListForMe {
 
         Directory directory = new Directory("First", arrayFile);
         directory.print();
-        File.sortFile(arrayFile);
+        directory.sortFile();
+        // File.sortFile(arrayFile);
         directory.print();
 
 
         Bouquet bouquet = new Bouquet("First", 5, arrayFlowers);
         bouquet.print();
-        Flower.sortFlowers(arrayFlowers);
+        bouquet.sortFlowers();
+        //  Flower.sortFlowers(arrayFlowers);
         bouquet.print();
 
         MusicShop musicShop = new MusicShop("Second", 4, arrayMusic);
         musicShop.print();
-        MusicInstrument.sortMusicInstrument(arrayMusic);
+        musicShop.sortMusicInstrument();
+        //  MusicInstrument.sortMusicInstrument(arrayMusic);
         musicShop.print();
 
 
