@@ -11,10 +11,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
 
         Set<String> set = new HashSet<String>();
         set.add("арбуз");

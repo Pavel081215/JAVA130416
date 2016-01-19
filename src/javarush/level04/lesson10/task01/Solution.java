@@ -6,14 +6,11 @@ import java.io.*;
 Вывести на экран числа от 1 до 10 используя цикл while.
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         int x = 0;
-        while (x < 10)
-        {
-            x ++;
+        while (x < 10) {
+            x++;
             System.out.println(x);
         }
 

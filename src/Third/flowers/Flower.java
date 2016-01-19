@@ -1,9 +1,8 @@
 package Third.flowers;
 
 
-public class Flower
-{
-    public Flower(){
-   }
+public class Flower {
+    public Flower() {
+    }
 }
 

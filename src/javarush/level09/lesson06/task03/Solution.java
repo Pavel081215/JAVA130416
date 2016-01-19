@@ -6,18 +6,13 @@ int[] m = new int[2];
 m[8] = 5;
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
-        try
-        {//напишите тут ваш код
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        try {//напишите тут ваш код
 
             int[] m = new int[2];
             m[8] = 5;
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e);
         }
         //напишите тут ваш код

@@ -12,25 +12,23 @@ import java.util.List;
 Использовать только цикл for.
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<Integer> list = new ArrayList<Integer>();
 
-        for (int i = 0; i < 10; i++){list.add(Integer.parseInt(reader.readLine()));}
+        for (int i = 0; i < 10; i++) {
+            list.add(Integer.parseInt(reader.readLine()));
+        }
 
-        for (int q = 0; q < list.size(); q++)
-        {
-            int s = list.size()-1;
-            System.out.println(list.get(s-q));
+        for (int q = 0; q < list.size(); q++) {
+            int s = list.size() - 1;
+            System.out.println(list.get(s - q));
         }
 
         //напишите тут ваш код
     }
-
 
 
 }

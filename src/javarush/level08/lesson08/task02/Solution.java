@@ -15,31 +15,24 @@ public class Solution
 
 {
 
-    public static  HashSet<Integer> createSet()
-    {
+    public static HashSet<Integer> createSet() {
         HashSet<Integer> set = new HashSet<Integer>();
-        for (int i = 0; i < 20; i++)
-        {
+        for (int i = 0; i < 20; i++) {
             set.add(i + 11);//Напишите тут ваш код
         }
 
-     //   removeAllNumbersMoreThan10(set);
-
-
+        //   removeAllNumbersMoreThan10(set);
 
 
         return set;
     }
 
-    public static HashSet<Integer> removeAllNumbersMoreThan10(HashSet<Integer> set)
-    {
+    public static HashSet<Integer> removeAllNumbersMoreThan10(HashSet<Integer> set) {
 
         Iterator<Integer> iterator = set.iterator();
-        while (iterator.hasNext())
-        {
+        while (iterator.hasNext()) {
             int a = iterator.next();
-            if (a > 10)
-            {
+            if (a > 10) {
                 iterator.remove();
             }
         }

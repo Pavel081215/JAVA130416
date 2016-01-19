@@ -12,10 +12,8 @@ import java.util.ArrayList;
 Вывести список на экран, каждое значение с новой строки.
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         ArrayList<Integer> list = new ArrayList<Integer>();
@@ -23,13 +21,11 @@ public class Solution
         int n = Integer.parseInt(reader.readLine());
         int m = Integer.parseInt(reader.readLine());
 
-        for (int q = 0; q < n; q++)
-        {
+        for (int q = 0; q < n; q++) {
             list.add(Integer.parseInt(reader.readLine()));
         }
 
-        for (int q = 0; q < m; q++)
-        {
+        for (int q = 0; q < m; q++) {
             //int f = );
 
             list.add(list.get(0));
@@ -37,12 +33,9 @@ public class Solution
             list.remove(0);
         }
 
-        for (int i = 0; i < list.size(); i ++)
-        {
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-
-
 
 
         // /напишите тут ваш код

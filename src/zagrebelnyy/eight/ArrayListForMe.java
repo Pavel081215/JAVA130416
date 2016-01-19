@@ -2,11 +2,8 @@ package zagrebelnyy.eight;
 
 import zagrebelnyy.eight.oopforme.file.*;
 import zagrebelnyy.eight.oopforme.flowers.*;
-import zagrebelnyy.eight.oopforme.music.Guitar;
-import zagrebelnyy.eight.oopforme.music.MusicInstrument;
-import zagrebelnyy.eight.oopforme.music.Piano;
-import zagrebelnyy.eight.oopforme.music.Trumpet;
-import zagrebelnyy.six.music.MusicShop;
+import zagrebelnyy.eight.oopforme.music.*;
+
 
 import java.util.ArrayList;
 
@@ -48,17 +45,19 @@ public class ArrayListForMe {
 
         Directory directory = new Directory("First", arrayFile);
         directory.print();
+        File.sortFile(arrayFile);
+        directory.print();
+
 
         Bouquet bouquet = new Bouquet("First", 5, arrayFlowers);
         bouquet.print();
+        Flower.sortFlowers(arrayFlowers);
+        bouquet.print();
 
-        MusicShop musicShop = new MusicShop(3,arrayMusic);
-
-
-
-
-
-
+        MusicShop musicShop = new MusicShop("Second", 4, arrayMusic);
+        musicShop.print();
+        MusicInstrument.sortMusicInstrument(arrayMusic);
+        musicShop.print();
 
 
 

@@ -13,10 +13,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         //все элементы хранятся в парах
         Map<String, String> map = new HashMap<String, String>();
         map.put("арбуз", "ягода");
@@ -31,11 +29,9 @@ public class Solution
         map.put("картофель", "клубень");
 
 
-
         Iterator<Map.Entry<String, String>> iterator = map.entrySet().iterator();
 
-        while (iterator.hasNext())
-        {
+        while (iterator.hasNext()) {
             //получение «пары» элементов
             Map.Entry<String, String> p = iterator.next();
             String k = p.getKey();            //ключ

@@ -25,7 +25,7 @@ public abstract class File {
         return "File";
     }
 
-    public static ArrayList sortFile(ArrayList <File> file) {
+    public static ArrayList sortFile(ArrayList<File> file) {
         for (int i = 0; i < file.size(); i++) {
             for (int j = 0; j < file.size() - i - 1; j++) {
                 if (file.get(j).getName().length() > file.get(j + 1).getName().length()) {
@@ -38,17 +38,17 @@ public abstract class File {
         return file;
     }
 
-   public static void print(ArrayList <File> arrayFile){
-       System.out.println(arrayFile);
-       System.out.println("=====================");
-       System.out.println("| Name              |");
-       System.out.println("=====================");
-       for (File element : arrayFile) {
-           System.out.println("|" + element.getName() + "\t" + "\t" + "\t" + "|");
-       }
-       System.out.println("=====================");
-       System.out.println(" ");
-   }
+   /* public static void print(ArrayList<File> arrayFile) {
+        System.out.println(arrayFile);
+        System.out.println("=====================");
+        System.out.println("| Name              |");
+        System.out.println("=====================");
+        for (File element : arrayFile) {
+            System.out.println("|" + element.getName() + "\t" + "\t" + "\t" + "|");
+        }
+        System.out.println("=====================");
+        System.out.println(" ");
+    }*/
 
 
 }

@@ -1,5 +1,5 @@
 package Third.flowers;
 
-public class  Aster extends Flower {
+public class Aster extends Flower {
 
 }

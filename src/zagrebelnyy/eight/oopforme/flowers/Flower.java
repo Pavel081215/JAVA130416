@@ -46,7 +46,7 @@ public abstract class Flower {
         return flower;
     }
 
-    public static void print (List<Flower> arrayFlowers){
+  /*  public static void print(List<Flower> arrayFlowers) {
         System.out.println(arrayFlowers);
         System.out.println("=============================");
         System.out.println("| Name      |  Size         |");
@@ -58,7 +58,7 @@ public abstract class Flower {
 
         System.out.println("");
         System.out.println("");
-    }
+    }*/
 }
 
 

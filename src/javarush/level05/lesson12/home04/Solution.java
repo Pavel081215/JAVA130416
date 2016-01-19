@@ -4,10 +4,8 @@ package com.javarush.test.level05.lesson12.home04;
 Вывести на экран текущую дату в аналогичном виде "21 02 2014".
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
-        System.out.println("05" + " "  + "11" + " " + "2015"); //напишите тут ваш код
+public class Solution {
+    public static void main(String[] args) {
+        System.out.println("05" + " " + "11" + " " + "2015"); //напишите тут ваш код
     }
 }

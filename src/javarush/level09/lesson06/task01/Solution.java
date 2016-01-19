@@ -5,20 +5,16 @@ package com.javarush.test.level09.lesson06.task01;
 int a = 42 / 0;
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
-       try
-       {
-           int a = 42/0;  //напишите тут ваш код
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        try {
+            int a = 42 / 0;  //напишите тут ваш код
 
-           //throw = new
-       }
-catch (ArithmeticException e){
-    System.out.println(e);
+            //throw = new
+        } catch (ArithmeticException e) {
+            System.out.println(e);
 
-}
+        }
 
 
         //напишите тут ваш код

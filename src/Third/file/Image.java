@@ -1,4 +1,4 @@
 package Third.file;
 
-public class Image extends File{
+public class Image extends File {
 }

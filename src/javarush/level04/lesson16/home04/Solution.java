@@ -13,10 +13,8 @@ import java.io.*;
 Я родился 15.2.1988
 */
 
-public class Solution
-{
-    public static void main(String[] args)   throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -30,7 +28,7 @@ public class Solution
         int d = Integer.parseInt(d1);
 
         System.out.println("Меня зовут" + " " + name);
-        System.out.println("Я родился   " + d + "." + m + "." + y );
+        System.out.println("Я родился   " + d + "." + m + "." + y);
 
 
         //напишите тут ваш код

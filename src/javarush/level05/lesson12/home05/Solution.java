@@ -8,17 +8,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-         // String s = reader.readLine();
+        // String s = reader.readLine();
         //int x = Integer.parseInt(s);
         int sum = 0;
 //Boolean exit = false;
-        while (true)
-        {
+        while (true) {
             String s = reader.readLine();
             if (s.equals("сумма"))
                 break;

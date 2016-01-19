@@ -7,10 +7,11 @@ import java.util.List;
 /**
  * Created by Pavel on 18.01.2016.
  */
-public class Bouquet   implements Printable {
+public class Bouquet implements Printable {
     String name;
     int size;
-    private List<Flower>  bouquet;
+    private List<Flower> bouquet;
+
     public Bouquet(String name, int size, List<Flower> bouquet) {
         this.name = name;
         this.size = size;

@@ -6,21 +6,18 @@ import java.util.*;
 Нужно создать два списка – LinkedList и ArrayList.
 */
 
-public class Solution
-{
-    public static Object createArrayList()
-    {
+public class Solution {
+    public static Object createArrayList() {
         ArrayList<String> list = new ArrayList<String>();
 
         return list;
-       //напишите тут ваш код
+        //напишите тут ваш код
 
     }
 
-    public static Object createLinkedList()
-    {
+    public static Object createLinkedList() {
         LinkedList<String> list1 = new LinkedList<String>();
-         //напишите тут ваш код
+        //напишите тут ваш код
         return list1;
     }
 }

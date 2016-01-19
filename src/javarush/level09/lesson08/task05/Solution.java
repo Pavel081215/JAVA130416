@@ -6,30 +6,23 @@ package com.javarush.test.level09.lesson08.task05;
 Можно использовать только один блок try..
 */
 
-public class Solution
-{
+public class Solution {
     public static void main(String[] args) {
         processExceptions(new Solution());
     }
 
     public static void processExceptions(Solution obj) {
-       try{
-        obj.method1();
-        obj.method2();
-        obj.method3();
-    }
-       catch (NullPointerException e)
-       {
-           printStack(e);
-       }
-       catch (IndexOutOfBoundsException e)
-       {
-           printStack(e);
-       }
-       catch (NumberFormatException e)
-       {
-           printStack(e);
-       }
+        try {
+            obj.method1();
+            obj.method2();
+            obj.method3();
+        } catch (NullPointerException e) {
+            printStack(e);
+        } catch (IndexOutOfBoundsException e) {
+            printStack(e);
+        } catch (NumberFormatException e) {
+            printStack(e);
+        }
     }
 
     public static void printStack(Throwable throwable) {
@@ -39,7 +32,7 @@ public class Solution
         }
     }
 
-    public void method1(){
+    public void method1() {
         throw new NullPointerException();
     }
 

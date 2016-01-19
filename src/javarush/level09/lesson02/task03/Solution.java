@@ -5,55 +5,48 @@ package com.javarush.test.level09.lesson02.task03;
  Воспользуйся функцией: element.getLineNumber().
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         method1();
 
     }
 
-    public static int method1()
-    {
+    public static int method1() {
         method2();
         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
         int meth = stackTraceElement[2].getLineNumber();
         System.out.println(meth);
-        return  meth;
+        return meth;
     }
 
-    public static int method2()
-    {
+    public static int method2() {
         method3();
         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
         int meth = stackTraceElement[2].getLineNumber();
         System.out.println(meth);
-        return  meth;
+        return meth;
     }
 
-    public static int method3()
-    {
+    public static int method3() {
         method4();
         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
         int meth = stackTraceElement[2].getLineNumber();
         System.out.println(meth);
-        return  meth;
+        return meth;
     }
 
-    public static int method4()
-    {
+    public static int method4() {
         method5();
         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
         int meth = stackTraceElement[2].getLineNumber();
         System.out.println(meth);
-        return  meth;
+        return meth;
     }
 
-    public static int method5()
-    {
+    public static int method5() {
         StackTraceElement[] stackTraceElement = Thread.currentThread().getStackTrace();
         int meth = stackTraceElement[2].getLineNumber();
         System.out.println(meth);
-        return  meth;
+        return meth;
     }
 }

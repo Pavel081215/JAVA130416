@@ -14,10 +14,8 @@ import java.util.Set;
 6. Реализовать метод printPets, котороый должен выводить на экран всех животных, которые в нем есть. Каждое животное с новой строки
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Set<Cat> cats = createCats();
         Set<Dog> dogs = createDogs();
 
@@ -36,8 +34,7 @@ public class Solution
 
     }
 
-    public static Set<Cat> createCats()
-    {
+    public static Set<Cat> createCats() {
         HashSet<Cat> result = new HashSet<Cat>();
 
         result.add(new Cat("10"));
@@ -49,21 +46,19 @@ public class Solution
         return result;
     }
 
-    public static Set<Dog> createDogs()
-    {
+    public static Set<Dog> createDogs() {
         HashSet<Dog> resultD = new HashSet<Dog>();
 
         resultD.add(new Dog("100"));
         resultD.add(new Dog("200"));
         resultD.add(new Dog("300"));
-         //напишите тут ваш код
+        //напишите тут ваш код
 
 
         return resultD;
     }
 
-    public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs)
-    {
+    public static Set<Object> join(Set<Cat> cats, Set<Dog> dogs) {
         HashSet<Object> resultDC = new HashSet<Object>();
 
 
@@ -74,11 +69,7 @@ public class Solution
     }
 
 
-
-
-
-    public static void removeCats(Set<Object> pets, Set<Cat> cats)
-    {
+    public static void removeCats(Set<Object> pets, Set<Cat> cats) {
         pets.removeAll(cats);
 
 
@@ -101,30 +92,25 @@ public class Solution
     }
 
 
-
-
-
-
-
-    public static void printPets(Set<Object> pets)
-    {
+    public static void printPets(Set<Object> pets) {
         Iterator<Object> iterator = pets.iterator();
-        while (iterator.hasNext()){
-            System.out.println(iterator.next()); }//напишите тут ваш код
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }//напишите тут ваш код
     }
-    public static class  Cat
-    {
+
+    public static class Cat {
         String name;
-        public  Cat(String name)
-        {
+
+        public Cat(String name) {
             this.name = name;
         }
     }
-    public static class  Dog
-    {
+
+    public static class Dog {
         String name;
-        public  Dog (String name)
-        {
+
+        public Dog(String name) {
             this.name = name;
         }
     }

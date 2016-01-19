@@ -13,23 +13,18 @@ import java.io.*;
 абв
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         String s = reader.readLine();
         String x = reader.readLine();
-              int y = Integer.parseInt(x);
+        int y = Integer.parseInt(x);
         int q = 0;
-        while (q < y)
-        {
+        while (q < y) {
             System.out.println(s);
-            q ++;
+            q++;
         }
-
-
 
 
     }

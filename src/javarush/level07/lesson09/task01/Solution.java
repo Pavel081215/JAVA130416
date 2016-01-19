@@ -15,16 +15,13 @@ import java.util.List;
  который для x%3, потом тот, который для x%2, потом последний.
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         //int q = Integer.parseInt(reader.readLine());
         ArrayList<Integer> list = new ArrayList<Integer>();
 
-        for (int i = 0; i < 20; i++)
-        {
+        for (int i = 0; i < 20; i++) {
             list.add(Integer.parseInt(reader.readLine()));
         }
         ArrayList<Integer> list2 = new ArrayList<Integer>();
@@ -32,28 +29,21 @@ public class Solution
         ArrayList<Integer> list23 = new ArrayList<Integer>();
 
 
-
-      for (int i = 0; i < list.size(); i++)
-      {
-          int w = list.get(i);
+        for (int i = 0; i < list.size(); i++) {
+            int w = list.get(i);
 
 
-          if ( w % 2 == 0 ||  w % 3 == 0 )
-          {
-          if (w % 2 == 0 )
-          {
-              list2.add(list.get(i));
-          }
-              if (w % 3 == 0 )
-              {
-                  list3.add(list.get(i));
-              }
-          }
-          else
-          {
-            list23.add(list.get(i));
-          }
-      }
+            if (w % 2 == 0 || w % 3 == 0) {
+                if (w % 2 == 0) {
+                    list2.add(list.get(i));
+                }
+                if (w % 3 == 0) {
+                    list3.add(list.get(i));
+                }
+            } else {
+                list23.add(list.get(i));
+            }
+        }
         printList(list3);
         printList(list2);
         printList(list23);
@@ -61,12 +51,10 @@ public class Solution
         //напишите тут ваш код
     }
 
-    public static void printList(List<Integer> list)
-    {
-       for( int i = 0; i < list.size();i++ )
-       {
-           System.out.println(list.get(i)); //напишите тут ваш код
-       }
+    public static void printList(List<Integer> list) {
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i)); //напишите тут ваш код
+        }
 
     }
 }

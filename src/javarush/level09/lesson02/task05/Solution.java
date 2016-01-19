@@ -15,8 +15,7 @@ public class Solution
 }*/
 
 
-    public static int getStackTraceDeep()
-    {
+    public static int getStackTraceDeep() {
 
         StackTraceElement[] stackTraceElements = Thread.currentThread().getStackTrace();//напишите тут ваш код
         int deep = 0;

@@ -12,10 +12,8 @@ package com.javarush.test.level07.lesson12.home06;
 …
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Human grandPaFather = new Human("дедушка 1", true, 65, null, null);
         Human grandMoFather = new Human("бабушка 1", false, 62, null, null);
         Human grandPaMother = new Human("дедушка 2", true, 69, null, null);
@@ -37,14 +35,12 @@ public class Solution
         //напишите тут ваш код
     }
 
-    public static class Human
-    {
+    public static class Human {
         private String name;
         private boolean sex;
         private int age;
         private Human father;
         private Human mother;
-
 
 
         public Human(String name, boolean sex, int age, Human father, Human mother) {
@@ -56,8 +52,7 @@ public class Solution
         }
         //напишите тут ваш код
 
-        public String toString()
-        {
+        public String toString() {
             String text = "";
             text += "Имя: " + this.name;
             text += ", пол: " + (this.sex ? "мужской" : "женский");

@@ -5,10 +5,8 @@ package com.javarush.test.level00.lesson07.task01;
 Пример вывода на экран:
 Как и многие жизненные проблемы, эту можно решить сгибанием.
 */
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         System.out.print("Как и многие жизненные проблемы, эту можно решить сгибанием.");
         //напишите тут ваш код
     }

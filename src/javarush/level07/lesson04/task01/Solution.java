@@ -11,20 +11,18 @@ import java.io.InputStreamReader;
 2. Метод max(int[] array) должен находить максимальное число из элементов массива
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
+public class Solution {
+    public static void main(String[] args) throws Exception {
         int[] array = initializeArray();
         int max = max(array);
         System.out.println(max);
     }
+
     public static int[] initializeArray() throws IOException {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int[] a = new int[20];
-        for (int i = 0; i < a.length; i++)
-        {
+        for (int i = 0; i < a.length; i++) {
             a[i] = Integer.parseInt(reader.readLine());
         }
         //Инициализируйте (создайте и заполните) массив тут
@@ -35,14 +33,12 @@ public class Solution
 
         int max = array[0];
 
-        for (int w = 0; w < array.length; w++ )
-        {
-            if (array[w] > max)
-            {
+        for (int w = 0; w < array.length; w++) {
+            if (array[w] > max) {
                 max = array[w];
             }
         }
-       //Найдите максимальное значение в этом методе
+        //Найдите максимальное значение в этом методе
         return max;
     }
 }

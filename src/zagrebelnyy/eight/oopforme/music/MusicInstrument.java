@@ -47,7 +47,7 @@ public abstract class MusicInstrument {
         return musicInstrument;
     }
 
-    public static void print (ArrayList <MusicInstrument> arrayMusic) {
+   /* public static void print(ArrayList<MusicInstrument> arrayMusic) {
         System.out.println(arrayMusic);
         System.out.println("=============================");
         System.out.println("| Name      |  Price        |");
@@ -59,7 +59,7 @@ public abstract class MusicInstrument {
         System.out.println("=============================");
         System.out.println("");
         System.out.println("");
-    }
+    }*/
 
 
 }

@@ -13,12 +13,12 @@ import java.util.Map;
 
 public class Solution {
     HashMap<Integer, String> map;
-   // int index ;
-   // String name ;
+    // int index ;
+    // String name ;
 
     public Solution() {
         this.map = new HashMap<Integer, String>();
-    //    map.put(index, name);
+        //    map.put(index, name);
     }
 
     public static void main(String[] args) throws IOException {

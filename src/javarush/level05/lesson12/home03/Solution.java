@@ -7,58 +7,52 @@ package com.javarush.test.level05.lesson12.home03;
 Mouse jerryMouse = new Mouse(“Jerry”, 12 , 5), где 12 - высота в см, 5 - длина хвоста в см.
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
-       Mouse jerryMouse = new Mouse("Jerry", 12 , 5);
-       Dog dogDog = new Dog ("Dog", 3 , 4);
-       Cat tomCat = new Cat ("Tom", 3 , 5);
+public class Solution {
+    public static void main(String[] args) {
+        Mouse jerryMouse = new Mouse("Jerry", 12, 5);
+        Dog dogDog = new Dog("Dog", 3, 4);
+        Cat tomCat = new Cat("Tom", 3, 5);
 
         //напишите тут ваш код
     }
 
-    public static class Mouse
-    {
+    public static class Mouse {
         String name;
         int height;
         int tail;
 
-        public Mouse(String name, int height, int tail)
-        {
+        public Mouse(String name, int height, int tail) {
             this.name = name;
             this.height = height;
             this.tail = tail;
         }
     }
-    public static class Dog
-    {
+
+    public static class Dog {
         String name;
         int hei;
         int tail;
 
-        public Dog(String name, int hei, int tail)
-        {
+        public Dog(String name, int hei, int tail) {
             this.name = name;
             this.hei = hei;
             this.tail = tail;
         }
     }
-    public static class Cat
-    {
+
+    public static class Cat {
         String name;
         int heig;
         int tail;
 
-        public Cat(String name, int heig, int tail)
-        {
+        public Cat(String name, int heig, int tail) {
             this.name = name;
             this.heig = heig;
             this.tail = tail;
         }
     }
-    }
+}
 
-    //добавьте тут ваши классы
+//добавьте тут ваши классы
 
 

@@ -13,24 +13,21 @@ import java.util.List;
 Вывести строки на экран, каждую с новой строки.
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws IOException
-    {
+public class Solution {
+    public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         ArrayList<String> list = new ArrayList<String>();
 
         String b = "end";
         String f = null;
 
-       while (!(f=reader.readLine()).equals(b)){
+        while (!(f = reader.readLine()).equals(b)) {
 
-             list.add(f);
-            }
-       for(int y = 0; y < list.size(); y++ )
-       {
-           System.out.println(list.get(y));
-       }
+            list.add(f);
+        }
+        for (int y = 0; y < list.size(); y++) {
+            System.out.println(list.get(y));
+        }
 
     }
 }

@@ -19,11 +19,9 @@ import java.io.InputStreamReader;
 17
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
-        BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
         int q = Integer.parseInt(reader.readLine());
         int w = Integer.parseInt(reader.readLine());
@@ -35,11 +33,8 @@ public class Solution
         {
             as = q;
             q = w;
-            w =as;
+            w = as;
         }
-
-
-
 
 
         if (q > e && e > w) // какая больше (q и  w ) или e
@@ -47,45 +42,31 @@ public class Solution
             as = w;
             w = e;
             e = as;
-        }
-        else
-        {
-            if(q < e)
-            {
-             as = q;
-             q = e;
-             e = w;
-             w = as;
+        } else {
+            if (q < e) {
+                as = q;
+                q = e;
+                e = w;
+                w = as;
             }
-         }
-
-
-
-
-
+        }
 
 
         if (q > r && r > e) // какая больше (q и w и e  ) или r
         {
-            if ( r > w )
-            {
+            if (r > w) {
                 as = w;
                 w = r;
                 r = e;
                 e = as;
 
-            }
-            else
-            {
+            } else {
                 as = e;
                 e = r;
                 r = as;
             }
-        }
-        else
-        {
-            if (r > q)
-            {
+        } else {
+            if (r > q) {
                 as = r;
                 r = e;
                 e = w;
@@ -95,26 +76,20 @@ public class Solution
         }
         if (q > t && t > r) // какая больше (q и w и e и r ) или t
         {
-            if (t > w)
-            {
-              as = t;
-              t = r;
-              r = e ;
-              e = w;
-              w = as;
-            }
-            else
-            {
-                if ( t > e)
-                {
-                  as = t;
+            if (t > w) {
+                as = t;
+                t = r;
+                r = e;
+                e = w;
+                w = as;
+            } else {
+                if (t > e) {
+                    as = t;
                     t = r;
-                    r = e ;
+                    r = e;
                     e = as;
 
-                }
-                else
-                {
+                } else {
                     as = t;
                     t = r;
                     r = as;
@@ -123,19 +98,11 @@ public class Solution
             }
         }
 
-        System.out.println( q + "  "  +  w  +  "   " + e + "  "  + r + "  " + t);
+        System.out.println(q + "  " + w + "   " + e + "  " + r + "  " + t);
 
     }
 
 
-
-
-
-
-
-
-
-
-        //напишите тут ваш код
+    //напишите тут ваш код
 
 }

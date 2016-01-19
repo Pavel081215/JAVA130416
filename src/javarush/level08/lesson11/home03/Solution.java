@@ -10,36 +10,31 @@ import java.util.Map;
 4. Вывести содержимое Map на экран.
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         Map<String, String> map = createPeopleList();
         printPeopleList(map);
     }
 
-    public static Map<String, String> createPeopleList()
-    {
-        Map<String, String> map  = new HashMap<String, String>();
-        map.put("Ткаченко","Инна");
-        map.put("Щербак","Ина");
-        map.put("Щербак","Алена");
-        map.put("Куркович","Валя");
-        map.put("Неволько","виктор");
-        map.put("Козачук","Вячеслав");
-        map.put("Козачук","Валя");
-        map.put("Соловей","Наташа");
-        map.put("Мрих","Игорь");
-        map.put("Васичкин","Инна");
+    public static Map<String, String> createPeopleList() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("Ткаченко", "Инна");
+        map.put("Щербак", "Ина");
+        map.put("Щербак", "Алена");
+        map.put("Куркович", "Валя");
+        map.put("Неволько", "виктор");
+        map.put("Козачук", "Вячеслав");
+        map.put("Козачук", "Валя");
+        map.put("Соловей", "Наташа");
+        map.put("Мрих", "Игорь");
+        map.put("Васичкин", "Инна");
         return (HashMap) map; //напишите тут ваш код
 
 
     }
 
-    public static void printPeopleList(Map<String, String> map)
-    {
-        for (Map.Entry<String, String> s : map.entrySet())
-        {
+    public static void printPeopleList(Map<String, String> map) {
+        for (Map.Entry<String, String> s : map.entrySet()) {
             System.out.println(s.getKey() + " " + s.getValue());
         }
     }

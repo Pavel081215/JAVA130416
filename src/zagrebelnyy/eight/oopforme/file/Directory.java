@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Pavel on 18.01.2016.
  */
 
-public class Directory extends File  implements Printable {
+public class Directory extends File implements Printable {
     private List<File> files;
 
     public Directory(String name, List<File> files) {

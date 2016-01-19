@@ -6,21 +6,16 @@ String s = null;
 String m = s.toLowerCase();
 */
 
-public class Solution
-{
-    public static void main(String[] args) throws Exception
-    {
-      try
-      {  //напишите тут ваш код
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        try {  //напишите тут ваш код
 
-          String s = null;
-          String m = s.toLowerCase();
-      }
-      catch (Throwable e)
-      {
-         // String r = e.getMessage();
-          System.out.println(e);
-      }
+            String s = null;
+            String m = s.toLowerCase();
+        } catch (Throwable e) {
+            // String r = e.getMessage();
+            System.out.println(e);
+        }
         //напишите тут ваш код
 
     }
