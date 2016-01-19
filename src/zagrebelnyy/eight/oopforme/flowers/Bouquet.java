@@ -2,6 +2,7 @@ package zagrebelnyy.eight.oopforme.flowers;
 
 import zagrebelnyy.eight.Printable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,24 +11,16 @@ import java.util.List;
 public class Bouquet implements Printable {
     String name;
     int size;
-    private List<Flower> flowers;
+    private ArrayList<Flower> flowers;
 
-    public Bouquet(String name, int size, List<Flower> bouquet) {
+    public Bouquet(String name, int size, ArrayList<Flower> bouquet) {
         this.name = name;
         this.size = size;
         this.flowers = bouquet;
     }
 
     public void sortFlowers() {
-        for (int i = 0; i < flowers.size(); i++) {
-            for (int j = 0; j < flowers.size() - i - 1; j++) {
-                if (flowers.get(j).getName().compareTo(flowers.get(j + 1).getName()) > 0) {
-                    Flower temp = flowers.get(j);
-                    flowers.set(j, flowers.get(j + 1));
-                    flowers.set(j + 1, temp);
-                }
-            }
-        }
+        FlowerUtils.sortFlowersUtils(flowers);
 
     }
 

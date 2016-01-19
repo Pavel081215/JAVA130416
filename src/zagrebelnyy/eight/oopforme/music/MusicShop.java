@@ -12,9 +12,9 @@ import java.util.List;
 public class MusicShop implements Printable {
     String name;
     int size;
-    private List<MusicInstrument> musicInstruments;
+    private ArrayList<MusicInstrument> musicInstruments;
 
-    public MusicShop(String name, int size, List<MusicInstrument> musicInstrument) {
+    public MusicShop(String name, int size, ArrayList<MusicInstrument> musicInstrument) {
         this.name = name;
         this.size = size;
         this.musicInstruments = musicInstrument;
@@ -22,15 +22,7 @@ public class MusicShop implements Printable {
 
 
     public void sortMusicInstrument() {
-        for (int i = 0; i < musicInstruments.size(); i++) {
-            for (int j = 0; j < musicInstruments.size() - i - 1; j++) {
-                if (musicInstruments.get(j).getPrice() > musicInstruments.get(j + 1).getPrice()) {
-                    MusicInstrument temp = musicInstruments.get(j);
-                    musicInstruments.set(j, musicInstruments.get(j + 1));
-                    musicInstruments.set(j + 1, temp);
-                }
-            }
-        }
+        MusicInsrumentUtils.sortMusicInstrumentUtils(musicInstruments);
 
     }
 
