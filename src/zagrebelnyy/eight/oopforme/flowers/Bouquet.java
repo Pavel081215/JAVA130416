@@ -10,12 +10,12 @@ import java.util.List;
 public class Bouquet implements Printable {
     String name;
     int size;
-    private List<Flower> bouquet;
+    private List<Flower> flowers;
 
     public Bouquet(String name, int size, List<Flower> bouquet) {
         this.name = name;
         this.size = size;
-        this.bouquet = bouquet;
+        this.flowers = bouquet;
     }
 
     @Override
@@ -24,8 +24,8 @@ public class Bouquet implements Printable {
         System.out.println("=============================");
         System.out.println("| Name      |  Size         |");
         System.out.println("=============================");
-        for (Flower element : bouquet) {
-            System.out.println("|" + element.getName() + "\f" + "\t" + "\t" + "|" + "\t" + element.getSize() + "\t" + "\t" + "\t");
+        for (Flower element : flowers) {
+            System.out.println("|" + element.getName() + "\t" + "\t" + "\t" + "|" + "\t" + element.getSize() + "\t" + "\t" + "\t");
         }
         System.out.println("=============================");
 

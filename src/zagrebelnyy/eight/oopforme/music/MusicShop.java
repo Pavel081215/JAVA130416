@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class MusicShop implements Printable {
     String name;
-    int price;
-    private List<MusicInstrument> musicInstrument;
+    int size;
+    private List<MusicInstrument> musicInstruments;
 
     public MusicShop(String name, int price, List<MusicInstrument> musicInstrument) {
         this.name = name;
-        this.price = price;
-        this.musicInstrument = musicInstrument;
+        this.size = price;
+        this.musicInstruments = musicInstrument;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class MusicShop implements Printable {
         System.out.println("=============================");
         System.out.println("| Name      |  Price        |");
         System.out.println("=============================");
-        for (MusicInstrument element : musicInstrument) {
+        for (MusicInstrument element : musicInstruments) {
             System.out.print("|" + element.getName() + "\t" + "|" + "\t" + element.getPrice() + "\t" + "\t" + "\t" + "|");
             System.out.println("");
         }
