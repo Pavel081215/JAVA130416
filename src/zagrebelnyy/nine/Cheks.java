@@ -2,6 +2,8 @@ package zagrebelnyy.nine;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 /**
  * Created by Pavel on 21.01.2016.
@@ -9,40 +11,48 @@ import java.io.InputStreamReader;
 public class Cheks {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        char[] alphabet = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-        int key = alphabet.length+1;
+        char[] alphabet = new char[26];
+        int k = 97;
+        for (int i = 0; i < alphabet.length; i++) {
+            alphabet[i] = (char) k;
+            k++;
+        }
+        int key = alphabet.length + 1;
         while (0 >= key || key >= alphabet.length) {
-            final String keyInfo = "Введите ключ не больше 26";  // не больше алфавита
+            final String keyInfo = "Введите ключ не больше 26 ( 26 количество букв в английском алфавите)";
             System.out.println(keyInfo);
             key = Integer.parseInt(reader.readLine());
             System.out.println(key);
         }
-        final String info = "Введите слово для шифрования";
+        final String info = "Введите слово для шифрования, английскими маленькими буквами";
         System.out.println(info);
         final String encodeWordStart = reader.readLine();
-        char [] charArray = encodeWordStart.toCharArray();
+        char[] charArray = encodeWordStart.toCharArray();
+
+        char[] encodeArray = new char[charArray.length];
+        for (int i = 0; i < charArray.length; i++) {
+            char space = ' ';
+            if (space != charArray[i]) {
 
 
-        char [] encodeArray = new char [charArray.length];
-
-        for (int i = 0; i < charArray.length; i ++){
-            for (int j = 0; j < charArray.length; j ++){
-                if(charArray[i] == alphabet [j]){
-                    if( j+ key <= alphabet.length ){
-                        encodeArray[i] = alphabet[j+key];
-                    }else {
-                        int temp = (j + key) - alphabet.length;
-                        encodeArray[i] = alphabet[temp];
+                for (int j = 0; j < alphabet.length; j++) {
+                    if (charArray[i] == alphabet[j]) {
+                        if (j + key < alphabet.length) {
+                            encodeArray[i] = alphabet[j + key];
+                        } else {
+                            int temp = (j + key) - alphabet.length;
+                            encodeArray[i] = alphabet[temp];
+                        }
                     }
-
                 }
             }
         }
-
-       String encodeWordFinish;
-      //  encodeWordFinish.toString(encodeWordFinish)
-
-        StringBuilder.class.toString(encodeArray);
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(encodeArray);
+        String encodeWordFinish = stringBuilder.toString();
+        String infoFinish = "Закодированное слово";
+        System.out.println(infoFinish);
+        System.out.println(encodeWordFinish);
 
 
     }
