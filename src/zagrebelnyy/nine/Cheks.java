@@ -11,18 +11,17 @@ import java.util.Arrays;
 public class Cheks {
     public static void main(String[] args) throws Exception {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        char[] alphabet = new char[26];
+        final char[] alphabet = new char[26];
         int k = 97;
         for (int i = 0; i < alphabet.length; i++) {
             alphabet[i] = (char) k;
             k++;
         }
         int key = alphabet.length + 1;
-        while (0 >= key || key >= alphabet.length) {
+        while (0 >= key || key > alphabet.length) {
             final String keyInfo = "Введите ключ не больше 26 ( 26 количество букв в английском алфавите)";
             System.out.println(keyInfo);
             key = Integer.parseInt(reader.readLine());
-            System.out.println(key);
         }
         final String info = "Введите слово для шифрования, английскими маленькими буквами";
         System.out.println(info);
@@ -47,9 +46,7 @@ public class Cheks {
                 }
             }
         }
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(encodeArray);
-        String encodeWordFinish = stringBuilder.toString();
+        String encodeWordFinish = String.valueOf(encodeArray);
         String infoFinish = "Закодированное слово";
         System.out.println(infoFinish);
         System.out.println(encodeWordFinish);
