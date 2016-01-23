@@ -7,15 +7,15 @@ import zagrebelnyy.eight.Alphabet;
  */
 public class BigWordsTtue {
     public static boolean bigSmallWords(char word, int mod) {
-        boolean bigSmallWords;
+        boolean bigSmallWords = false;
         char[] alphabeBig = Alphabet.alphabeBig(mod);
         for (int i = 0; i < alphabeBig.length; i++) {
-            if ( word == alphabeBig[i] ) {
+            if (word == alphabeBig[i]) {
                 bigSmallWords = true;
                 break;
             }
         }
-        bigSmallWords = false;
+
         return bigSmallWords;
     }
 }

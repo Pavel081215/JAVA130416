@@ -11,7 +11,7 @@ import java.util.ArrayList;
 /**
  * Created by Pavel on 22.01.2016.
  */
-public class Cheks3 {
+public class CheksModul9 {
     public static void main(String[] args) throws Exception {
         String code = "abc";
         int key = 25;
