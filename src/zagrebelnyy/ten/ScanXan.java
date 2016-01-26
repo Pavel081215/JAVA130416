@@ -11,7 +11,7 @@ public class ScanXan {
         Scanner s = null;
 
         try {
-            s = new Scanner(new BufferedReader(new FileReader("src//zagrebelnyy//ten//outagain.txt")));
+            s = new Scanner(new BufferedReader(new FileReader("src//zagrebelnyy//ten//second.txt")));
 
             while (s.hasNext()) {
                 System.out.println(s.next());

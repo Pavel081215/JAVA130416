@@ -7,28 +7,30 @@ import java.io.IOException;
 
 //https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html
 
-    public class CharacterStreams {
-        public static void main(String[] args) throws IOException {
+public class CharacterStreams {
+    public static void main(String[] args) throws IOException {
 
-            FileReader inputStream = null;
-            FileWriter outputStream = null;
+        FileReader in = null;
+        FileWriter out = null;
 
-            try {
-                inputStream = new FileReader("src//zagrebelnyy//ten//xanadu.txt");
-                outputStream = new FileWriter("src//zagrebelnyy//ten//characteroutput.txt");
+        try {
+            in = new FileReader("src//zagrebelnyy//ten//xanadu.txt");
+            out = new FileWriter("src//zagrebelnyy//ten//characteroutput.txt");
 
-                int c;
-                while ((c = inputStream.read()) != -1) {
-                    outputStream.write(c);
-                }
-            } finally {
-                if (inputStream != null) {
-                    inputStream.close();
-                }
-                if (outputStream != null) {
-                    outputStream.close();
-                }
+            int c;
+            while ((c = in.read()) != -1) {
+                out.write(c);
+            }
+        } finally {
+            if (in != null) {
+                in.close();
+            }
+            if (out != null) {
+                out.close();
             }
         }
+
+
     }
+}
 

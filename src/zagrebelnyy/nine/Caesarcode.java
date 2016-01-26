@@ -2,12 +2,14 @@ package zagrebelnyy.nine;
 
 import zagrebelnyy.eight.Alphabet;
 
+import java.io.IOException;
+
 
 /**
  * Created by Pavel on 22.01.2016.
  */
 public class Caesarcode {
-    public static String encode(String encode, int key) throws Exception {
+    public static String encode(String encode, int key)  throws IOException {
         final int mod = 26;
         final char[] alphabetSmall = Alphabet.alphabetsmall(mod);
         final char[] alphabetBig = Alphabet.alphabeBig(mod);
@@ -15,12 +17,12 @@ public class Caesarcode {
         char[] charArray = encode.toCharArray();
         char[] encodeArray = new char[charArray.length];
         char space = ' ';
-        char space1 = (char) 91;
+        char firstSquareBracketsInArrayToExclude = (char) 91;
 
         for (int i = 0; i < charArray.length; i++) {
 
-            if (space != charArray[i] && space1 != charArray[i]) {
-                if (!BigWordsTtue.bigSmallWords(charArray[i], mod)) {
+            if (space != charArray[i] && firstSquareBracketsInArrayToExclude != charArray[i]) {
+                if (!LettersLargeOrSmall.checkIsLettersLargeOrSmall(charArray[i], mod)) {
                     for (int j = 0; j < alphabetSmall.length; j++) {
                         if (charArray[i] == alphabetSmall[j]) {
                             if (j + key < alphabetSmall.length) {
@@ -49,7 +51,7 @@ public class Caesarcode {
     }
 
 
-    public static String decode(String decode, int key) throws Exception {
+    public static String decode(String decode, int key) throws IOException {
         final int mod = 26;
         final char[] alphabetSmall = Alphabet.alphabetsmall(mod);
         final char[] alphabetBig = Alphabet.alphabeBig(mod);
@@ -57,12 +59,12 @@ public class Caesarcode {
         char[] charArray = decode.toCharArray();
         char[] decodeArray = new char[charArray.length];
         char space = ' ';
-        char space1 = (char) 91;
+        char firstSquareBracketsInArrayToExclude = (char) 91;
 
         for (int i = 0; i < charArray.length; i++) {
 
-            if (space != charArray[i] && space1 != charArray[i]) {
-                if (!BigWordsTtue.bigSmallWords(charArray[i], mod)) {
+            if (space != charArray[i] && firstSquareBracketsInArrayToExclude != charArray[i]) {
+                if (!LettersLargeOrSmall.checkIsLettersLargeOrSmall(charArray[i], mod)) {
                     for (int j = 0; j < alphabetSmall.length; j++) {
                         if (charArray[i] == alphabetSmall[j]) {
                             if (j - key < 0) {
