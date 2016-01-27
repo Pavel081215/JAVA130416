@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class CheksModul9 {
     public static void main(String[] args) throws Exception {
         String code = "abc";
-        int key = 1365;
+        int key = 1;
     /*    System.out.println("начальное значение строка " + code);
         String encode = Caesarcode.encode(code, key);
         System.out.println("Закодированное строка " + encode);

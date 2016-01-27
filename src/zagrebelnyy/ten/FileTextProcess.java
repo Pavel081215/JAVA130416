@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class FileTextProcess {
 
-    public static void printDecodeTextFromInsideFile(String way) throws Exception {
+    public static void printDecodeTextFromInsideFile(String way, int key) throws Exception {
         Scanner s = null;
         try {
             s = new Scanner(new BufferedReader(new FileReader(way)));
@@ -23,7 +23,7 @@ public class FileTextProcess {
                 String text = s.next();
                 System.out.println("Текст из файла -  исходник");
                 System.out.println(text);
-                text = Caesarcode.decode(text, 5);
+                text = Caesarcode.decode(text,key );
                 System.out.println("Текст из файла -  разкодированный");
                 System.out.println(text);
             }

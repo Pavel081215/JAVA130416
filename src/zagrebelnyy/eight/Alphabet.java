@@ -7,7 +7,7 @@ public class Alphabet {
     public static char[] alphabetsmall(int mod) {
 
         final char[] alphabetSmall = new char[mod];
-        int k = 97;
+        int k = 97; // начальный номер кода из таблицы  ASCII для маленьких латинских букв
         for (int i = 0; i < alphabetSmall.length; i++) {
             alphabetSmall[i] = (char) k;
             k++;
@@ -18,7 +18,7 @@ public class Alphabet {
     public static char[] alphabeBig (int mod) {
 
         final char[] alphabetBig = new char[mod];
-        int k = 65;
+        int k = 65;// начальный номер кода из таблицы  ASCII для больших латинских букв
         for (int i = 0; i < alphabetBig.length; i++) {
             alphabetBig[i] = (char) k;
             k++;

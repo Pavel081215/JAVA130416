@@ -9,87 +9,65 @@ import java.io.IOException;
  * Created by Pavel on 22.01.2016.
  */
 public class Caesarcode {
-    public static String encode(String encode, int key)  throws IOException {
-        final int mod = 26;
-        final char[] alphabetSmall = Alphabet.alphabetsmall(mod);
-        final char[] alphabetBig = Alphabet.alphabeBig(mod);
-        key = key % mod;
+    final static int numberOfLettersInEnglishAlphabet = 26;
+
+
+    public static String encode(String encode, int key) throws IOException {
+        char[] alphabetWorking;
+        key = key % numberOfLettersInEnglishAlphabet;
         char[] charArray = encode.toCharArray();
         char[] encodeArray = new char[charArray.length];
-        char space = ' ';
-        char firstSquareBracketsInArrayToExclude = (char) 91;
-
         for (int i = 0; i < charArray.length; i++) {
-
-            if (space != charArray[i] && firstSquareBracketsInArrayToExclude != charArray[i]) {
-                if (!LettersLargeOrSmall.checkIsLettersLargeOrSmall(charArray[i], mod)) {
-                    for (int j = 0; j < alphabetSmall.length; j++) {
-                        if (charArray[i] == alphabetSmall[j]) {
-                            if (j + key < alphabetSmall.length) {
-                                encodeArray[i] = alphabetSmall[j + key];
-                            } else {
-                                encodeArray[i] = alphabetSmall[(j + key) - mod];
-                            }
+            if (Letters.checkIsCharAlphbetOrNotAlphbet(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                for (int j = 0; j < charArray.length; j++) {
+                    if (!Letters.checkIsLettersLarge(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                        alphabetWorking = Alphabet.alphabetsmall(numberOfLettersInEnglishAlphabet);
+                    } else {
+                        alphabetWorking = Alphabet.alphabeBig(numberOfLettersInEnglishAlphabet);
+                    }
+                    if (charArray[i] == alphabetWorking[j]) {
+                        if ((j + key) >= numberOfLettersInEnglishAlphabet) {
+                            encodeArray[i] = alphabetWorking[(j + key) - numberOfLettersInEnglishAlphabet];
+                        } else {
+                            encodeArray[i] = alphabetWorking[j + key];
                         }
                     }
-                } else {
-                    for (int j = 0; j < alphabetBig.length; j++) {
-                        if (charArray[i] == alphabetBig[j]) {
-                            if (j + key < alphabetBig.length) {
-                                encodeArray[i] = alphabetBig[j + key];
-                            } else {
-                                encodeArray[i] = alphabetBig[(j + key) - mod];
-                            }
-                        }
-                    }
-
                 }
-
+            } else {
+                encodeArray[i] = charArray[i];
             }
         }
         return String.valueOf(encodeArray);
     }
 
 
-    public static String decode(String decode, int key) throws IOException {
-        final int mod = 26;
-        final char[] alphabetSmall = Alphabet.alphabetsmall(mod);
-        final char[] alphabetBig = Alphabet.alphabeBig(mod);
-        key = key % mod;
-        char[] charArray = decode.toCharArray();
-        char[] decodeArray = new char[charArray.length];
-        char space = ' ';
-        char firstSquareBracketsInArrayToExclude = (char) 91;
-
+    public static String decode(String encode, int key) throws IOException {
+        char[] alphabetWorking;
+        key = key % numberOfLettersInEnglishAlphabet;
+        char[] charArray = encode.toCharArray();
+        char[] encodeArray = new char[charArray.length];
         for (int i = 0; i < charArray.length; i++) {
-
-            if (space != charArray[i] && firstSquareBracketsInArrayToExclude != charArray[i]) {
-                if (!LettersLargeOrSmall.checkIsLettersLargeOrSmall(charArray[i], mod)) {
-                    for (int j = 0; j < alphabetSmall.length; j++) {
-                        if (charArray[i] == alphabetSmall[j]) {
-                            if (j - key < 0) {
-                                decodeArray[i] = alphabetSmall[(j - key) + mod];
-                            } else {
-                                decodeArray[i] = alphabetSmall[j - key];
-
-                            }
-                        }
+            if (Letters.checkIsCharAlphbetOrNotAlphbet(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                for (int j = 0; j < charArray.length; j++) {
+                    if (!Letters.checkIsLettersLarge(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                        alphabetWorking = Alphabet.alphabetsmall(numberOfLettersInEnglishAlphabet);
+                    } else {
+                        alphabetWorking = Alphabet.alphabeBig(numberOfLettersInEnglishAlphabet);
                     }
-                } else {
-                    for (int j = 0; j < alphabetBig.length; j++) {
-                        if (charArray[i] == alphabetBig[j]) {
-                            if (j - key < 0) {
-                                decodeArray[i] = alphabetBig[(j - key) + mod];
-                            } else {
-                                decodeArray[i] = alphabetBig[j - key];
-
-                            }
+                    if (charArray[i] == alphabetWorking[j]) {
+                        if ((j - key) < 0) {
+                            encodeArray[i] = alphabetWorking[(j - key) + numberOfLettersInEnglishAlphabet];
+                        } else {
+                            encodeArray[i] = alphabetWorking[j - key];
                         }
                     }
                 }
+            } else {
+                encodeArray[i] = charArray[i];
             }
-
         }
-        return String.valueOf(decodeArray);
+        return String.valueOf(encodeArray);
     }
+
+
 }
