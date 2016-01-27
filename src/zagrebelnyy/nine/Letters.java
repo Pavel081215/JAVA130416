@@ -19,8 +19,8 @@ public class Letters {
         return bigLetter;
     }
 
-    public static boolean checkIsCharAlphbetOrNotAlphbet(char symbol, int numberOfLettersInEnglishAlphabet) {
-        boolean alphbetrOfLetters = false;
+    public static boolean checkIsCharAlphbetr(char symbol, int numberOfLettersInEnglishAlphabet) {
+        boolean alphbetrOfLetter = false;
         final int numberOfLettersInEnglishBigAndSmall = 52;
         char[] alphabeBig = Alphabet.alphabeBig(numberOfLettersInEnglishAlphabet);
         char[] alphabeSmall = Alphabet.alphabetsmall(numberOfLettersInEnglishAlphabet);
@@ -33,11 +33,11 @@ public class Letters {
         }
         for (int j = 0; j < Alphbetr.length; j++) {
             if (symbol == Alphbetr[j]) {
-                alphbetrOfLetters = true;
+                alphbetrOfLetter = true;
                 break;
             }
         }
-        return alphbetrOfLetters;
+        return alphbetrOfLetter;
     }
 
 }

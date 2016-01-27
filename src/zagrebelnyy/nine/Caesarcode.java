@@ -13,13 +13,13 @@ public class Caesarcode {
 
 
     public static String encode(String encode, int key) throws IOException {
-        char[] alphabetWorking;
+        char[] alphabetWorking = new char[numberOfLettersInEnglishAlphabet];
         key = key % numberOfLettersInEnglishAlphabet;
         char[] charArray = encode.toCharArray();
         char[] encodeArray = new char[charArray.length];
         for (int i = 0; i < charArray.length; i++) {
-            if (Letters.checkIsCharAlphbetOrNotAlphbet(charArray[i], numberOfLettersInEnglishAlphabet)) {
-                for (int j = 0; j < charArray.length; j++) {
+            if (Letters.checkIsCharAlphbetr(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                for (int j = 0; j < alphabetWorking.length; j++) {
                     if (!Letters.checkIsLettersLarge(charArray[i], numberOfLettersInEnglishAlphabet)) {
                         alphabetWorking = Alphabet.alphabetsmall(numberOfLettersInEnglishAlphabet);
                     } else {
@@ -42,13 +42,13 @@ public class Caesarcode {
 
 
     public static String decode(String encode, int key) throws IOException {
-        char[] alphabetWorking;
+        char[] alphabetWorking = new char[numberOfLettersInEnglishAlphabet];
         key = key % numberOfLettersInEnglishAlphabet;
         char[] charArray = encode.toCharArray();
         char[] encodeArray = new char[charArray.length];
         for (int i = 0; i < charArray.length; i++) {
-            if (Letters.checkIsCharAlphbetOrNotAlphbet(charArray[i], numberOfLettersInEnglishAlphabet)) {
-                for (int j = 0; j < charArray.length; j++) {
+            if (Letters.checkIsCharAlphbetr(charArray[i], numberOfLettersInEnglishAlphabet)) {
+                for (int j = 0; j < alphabetWorking.length; j++) {
                     if (!Letters.checkIsLettersLarge(charArray[i], numberOfLettersInEnglishAlphabet)) {
                         alphabetWorking = Alphabet.alphabetsmall(numberOfLettersInEnglishAlphabet);
                     } else {

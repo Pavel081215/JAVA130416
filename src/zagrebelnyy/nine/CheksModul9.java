@@ -13,13 +13,18 @@ import java.util.ArrayList;
  */
 public class CheksModul9 {
     public static void main(String[] args) throws Exception {
-        String code = "abc";
+        String code = "aabbcc AABBCC";
         int key = 48;
     /*    System.out.println("начальное значение строка " + code);
         String encode = Caesarcode.encode(code, key);
         System.out.println("Закодированное строка " + encode);
         String decode = Caesarcode.decode(encode, key);
         System.out.println("Раскодированное строка " + decode);*/
+
+       /* String encodecoll = Caesarcode.encode(code, key);
+        System.out.println("encoded: " + encodecoll);
+        String decodecoll = Caesarcode.decode(encodecoll, key);
+        System.out.println("decoded: " + decodecoll);*/
 
         ArrayList<File> arrayList = new ArrayList();
         arrayList.add(new Audio("first"));
