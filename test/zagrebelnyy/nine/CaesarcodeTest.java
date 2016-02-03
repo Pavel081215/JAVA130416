@@ -12,21 +12,21 @@ public class CaesarcodeTest extends TestCase {
     @Test
 
     public void testEncode() throws Exception {
-        String encode = "ABC";
-        String encode1 = "BCD";
+        String actual = "ABC";
+        String expected = "BCD";
         int key = 1;
-        String resultat = Caesarcode.encode(encode, key);
-        Assert.assertEquals(resultat, encode1);
+        String resultat = Caesarcode.encode(actual, key);
+        Assert.assertEquals(resultat, expected);
 
     }
 
     @Test
     public void testDecode() throws Exception {
-        String encode = "BCD";
-        String encode1 = "ABC";
+        String actual = "BCD";
+        String expected = "ABC";
         int key = 1;
-        String resultat = Caesarcode.decode(encode, key);
-        Assert.assertEquals(resultat, encode1);
+        String resultat = Caesarcode.decode(actual, key);
+        Assert.assertEquals(resultat, expected);
 
     }
 }
