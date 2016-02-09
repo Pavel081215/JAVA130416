@@ -10,17 +10,20 @@ package codegym;
  */
 public class MatrixTraversal {
     public static void main(String[] args) {
-        int[][] matrixB = {{1, 2, 3, 4},
+        int[][] matrixB = {{ 1, }};
+
+         /*       {{1, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12},
-                {13, 14, 15, 16}};
+                {13, 14, 15, 16}};*/
+
+         MatrixTraversal matrixTraversal = new MatrixTraversal();
+
+         int[] resolt = new int[16];
+
+       resolt = matrixTraversal.print(matrixB);
 
 
-        MatrixTraversal matrixTraversal = new MatrixTraversal();
-
-        int[] resolt = new int[16];
-
-        resolt = matrixTraversal.print(matrixB);
         for (int i = 0; i < resolt.length; i++) {
         System.out.println(resolt[i]);
         }
@@ -36,51 +39,40 @@ public class MatrixTraversal {
         int bottom = h - 1;
 
         int[] array = new int[h * w];
-        //   int [] row = input[top];
+ //       int [] row = input[top];
 
         int k = 0;
 //1
-        for (int i = top; i <= right; i++) {
-            array[k] = input[top][i];
-            k++;
-        }
+      while (k<=(h*w)-1) {
+          for (int i = left; i <= right; i++) {
+              array[k] = input[top][i];
+              k++;
+          }
 //2
-        for (int i = top + 1; i <= bottom; i++) {
-            array[k] = input[i][right];
-            k++;
-        }
+          for (int i = top+1 ; i <= bottom; i++) {
+              array[k] = input[i][right];
+              k++;
+          }
 //3
-        for (int i = bottom-1; i >= left; i--) {
-            array[k] = input[bottom][i];
-            k++;
-        }
+      if (k <= (h*w)-1){
+          for (int i = right-1 ; i >= left; i--) {
+              array[k] = input[bottom][i];
+              k++;
+          }
 //4
-
-        for (int i = bottom - 1; i >= top + 2; i--) {
-            array[k] = input[i][top];
-            k++;
-        }
-//5
-
-        for (int i = top; i <= right - 1; i++) {
-            array[k] = input[top + 1][i];
-            k++;
-        }
-//6
+          for (int i = bottom-1 ; i >= top+1 ; i--) {
+              array[k] = input[i][top];
+              k++;
+          }
+          top += 1;
+          right -= 1;
+          left += 1;
+           bottom -= 1;}
 
 
+      }
 
-        for (int i = top + 2; i <= bottom - 1; i++) {
-            array[k] = input[i][right - 1];
-            k++;
-        }
-//7
-        for (int i = right - 2; i > left; i--) {
-            array[k] = input[right - 1][bottom - 2];
-            k++;
-        }
 
         return array;
     }
-
 }
