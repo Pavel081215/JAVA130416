@@ -20,6 +20,9 @@ public class СompareEffectivenessOfCollections {
 
         for (int i = 0; i < options.length; i++) {
 
+
+
+
             resultList[i + step] = testTime.testTimeAdd(arrayList, options[i]);
             resultList[i + 1 + step] = testTime.testTimeGetList(arrayList, options[i]);
             resultList[i + 2 + step] = testTime.testTimeRemove(arrayList, options[i]);
