@@ -22,12 +22,16 @@ public class GenericsExtendsSuper extends TestCase {
     @Test
     public void testPersonList() throws Exception {
         List<Person> persons = Arrays.asList(new Person("1", "2"), new Person("3", "4"), new Person("1", ""));
+        List<Citizen> citizen = Arrays.asList(new Citizen("11", "22", ""), new Citizen("32", " ", "33312"), new Citizen("1", "1", "3333"));
+
+
         System.out.println(isValidList(persons, new PersonValidator()));
 
-        List<Citizen> citizen = Arrays.asList(new Citizen("11", "22", "122221"), new Citizen("32", " ", "33312"), new Citizen("1", "1", "3333"));
+
         System.out.println(isValidList(citizen, new PersonValidator()));
 
-        List<Citizen> filtredCitezen = filterInValid(citizen, new PersonValidator());
+
+       List<Citizen> filtredCitezen = filterInValid(citizen, new PersonValidator());
     }
 
 
@@ -75,6 +79,11 @@ public class GenericsExtendsSuper extends TestCase {
 
         }
     }
+
+
+
+
+
 
 
 
