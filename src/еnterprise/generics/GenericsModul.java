@@ -18,12 +18,12 @@ public class GenericsModul {
 
         // Добавить таск на выполнение. Результат таска будет доступен через метод getValidResults().
         // Бросает Эксепшн если уже был вызван метод execute()
-        void addTask(T task);
+         void  addTask(Task<? extends T> task);
 
         // Добавить таск на выполнение и валидатор результата. Результат таска будет записан в ValidResults если validator.isValid вернет true для этого результата
         // Результат таска будет записан в InvalidResults если validator.isValid вернет false для этого результата
         // Бросает Эксепшн если уже был вызван метод execute()
-        void addTask(T task, Validator validator);
+        void addTask(Task<? extends Number> task, Validator validator);
 
         // Выполнить все добавленые таски
         void execute();
@@ -40,10 +40,11 @@ public class GenericsModul {
 
     public class ExecutorImpl <T> implements Executor <Number> {
 
-        List<Number> taskExecutor = new ArrayList();
+        List<Task<? extends Number>> taskExecutor = new ArrayList();
+        List <Number>  number = new ArrayList();
 
         @Override
-        public void addTask(Number task) {
+        public  void addTask(Task <? extends Number> task) {
 
             //  T temp = (Integer) task;
 
@@ -52,7 +53,8 @@ public class GenericsModul {
         }
 
         @Override
-        public void addTask( Number task, Validator validator) {
+        public void addTask( Task <? extends Number> task, Validator validator) {
+
 
 
         }
