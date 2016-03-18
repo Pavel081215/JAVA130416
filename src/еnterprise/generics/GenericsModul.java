@@ -1,4 +1,7 @@
-package generics;
+package еnterprise.generics;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -6,20 +9,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Pavel on 17.03.2016.
+ * Created by Pavel on 18.03.2016.
  */
 public class GenericsModul {
 
-    public interface Executor<Task> {
+
+    public interface Executor <T> {
 
         // Добавить таск на выполнение. Результат таска будет доступен через метод getValidResults().
         // Бросает Эксепшн если уже был вызван метод execute()
-        void addTask(Task task);
+        void addTask(T task);
 
         // Добавить таск на выполнение и валидатор результата. Результат таска будет записан в ValidResults если validator.isValid вернет true для этого результата
         // Результат таска будет записан в InvalidResults если validator.isValid вернет false для этого результата
         // Бросает Эксепшн если уже был вызван метод execute()
-        void addTask(Task task, Validator validator);
+        void addTask(T task, Validator validator);
 
         // Выполнить все добавленые таски
         void execute();
@@ -33,32 +37,29 @@ public class GenericsModul {
     }
 
 
-    public class ExecutorImpl implements Executor<Task> {
 
-        List taskExecutor = new ArrayList();
-        Task<LongTask> longTask;
+    public class ExecutorImpl <T> implements Executor <Number> {
 
-        public ExecutorImpl(List taskExecutor, Task<LongTask> longTask) {
-            this.taskExecutor = taskExecutor;
-            this.longTask = longTask;
+        List<Number> taskExecutor = new ArrayList();
+
+        @Override
+        public void addTask(Number task) {
+
+            //  T temp = (Integer) task;
+
+            taskExecutor.add(task) ;
+
         }
 
         @Override
-        public void addTask(Task task) {
-            taskExecutor.add(longTask);
-
-        }
-
-        @Override
-        public void addTask(Task task, Validator validator) {
-
+        public void addTask( Number task, Validator validator) {
 
 
         }
 
         @Override
         public void execute() {
-            for (int i = 0; i < taskExecutor.size(); i++){
+            for (int i = 0; i < taskExecutor.size(); i++) {
 
             }
 
@@ -89,10 +90,11 @@ public class GenericsModul {
 
     }
 
-    public class LongTask implements Task<Long> {
+    public class LongTask implements Task <Long> {
         long result;
 
         public LongTask(long result) {
+
             this.result = result;
         }
 
@@ -112,24 +114,34 @@ public class GenericsModul {
     }
 
 
+
+
+
+
+
+
+
+
     //
     public interface Validator<T> {
-
         // Валидирует переданое значение
         boolean isValid(T result);
-
     }
 
 
     public class NumberValidator implements Validator<Number> {
-
-
         @Override
-        public boolean isValid(Number result) {
-
-            return false;
+        public boolean isValid(Number n) {
+            return n.doubleValue() > 0;
         }
     }
+    public class StringValidator implements Validator<String> {
+        @Override
+        public boolean isValid(String s) {
+            return !s.isEmpty();
+        }
+    }
+
 
 
     // пример испотльзования
@@ -155,3 +167,5 @@ public class GenericsModul {
     }
 
 }
+
+
