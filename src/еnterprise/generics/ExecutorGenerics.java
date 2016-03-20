@@ -36,10 +36,10 @@ public  class ExecutorGenerics {
         void execute();
 
         // Получить валидные результаты. Бросает Эксепшн если не был вызван метод execute()
-        List getValidResults();
+        List<? super T> getValidResults();
 
         // Получить невалидные результаты. Бросает Эксепшн если не был вызван метод execute()
-        List getInvalidResults();
+        List<? super T> getInvalidResults();
     }
 
     public static class ExecutorImpl<T> implements Executor<T> {
@@ -86,7 +86,7 @@ public  class ExecutorGenerics {
         }
 
         @Override
-        public List getValidResults() {
+        public List<? super T> getValidResults() {
 
             for (int i = 0; i < taskExecutor.size(); i++) {
 
@@ -102,7 +102,7 @@ public  class ExecutorGenerics {
         }
 
         @Override
-        public List getInvalidResults() {
+        public List<? super T> getInvalidResults() {
 
             for (int i = 0; i < taskExecutor.size(); i++) {
 
