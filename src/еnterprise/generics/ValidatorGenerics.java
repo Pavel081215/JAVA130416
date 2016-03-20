@@ -11,18 +11,6 @@ public  class ValidatorGenerics {
     }
 
 
-    public static  class NumberValidator implements Validator<Number> {
-        @Override
-        public boolean isValid(Number n) {
-            return n.doubleValue() > 0;
-        }
-    }
 
-    public static class IntegerValidator implements Validator<Integer> {
-        @Override
-        public boolean isValid(Integer s) {
-            return s.doubleValue() > 0;
-        }
-    }
 
 }
