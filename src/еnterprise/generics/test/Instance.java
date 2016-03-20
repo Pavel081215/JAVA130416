@@ -1,12 +1,14 @@
-package generics;
-import java.util.List;
-import generics.GenericsModul2;
+package ånterprise.generics.test;
+
 import javafx.concurrent.Task;
 
+import java.util.List;
+
 /**
- * Created by Pavel on 16.03.2016.
+ * Created by Pavel on 20.03.2016.
  */
 public class Instance {
+
 
 
 
@@ -42,4 +44,5 @@ public class Instance {
         }
 */
     }
+
 }

@@ -1,46 +1,46 @@
-package Рµnterprise.generics;
+package еnterprise.generics.test;
+
+import еnterprise.generics.MethodHasBeenStartedException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-
-import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 /**
- * Created by Pavel on 18.03.2016.
+ * Created by Pavel on 20.03.2016.
  */
-public class GenericsModul {
-
-
+public class GenericsModulTest {
+    /*
     public interface Executor<T> {
 
-        // Р”РѕР±Р°РІРёС‚СЊ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ. Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ С‡РµСЂРµР· РјРµС‚РѕРґ getValidResults().
-        // Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё СѓР¶Рµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
+        // Добавить таск на выполнение. Результат таска будет доступен через метод getValidResults().
+        // Бросает Эксепшн если уже был вызван метод execute()
         void addTask(Task<? extends T> task) throws MethodHasBeenStartedException;
 
-        // Р”РѕР±Р°РІРёС‚СЊ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ Рё РІР°Р»РёРґР°С‚РѕСЂ СЂРµР·СѓР»СЊС‚Р°С‚Р°. Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ Р·Р°РїРёСЃР°РЅ РІ ValidResults РµСЃР»Рё validator.isValid РІРµСЂРЅРµС‚ true РґР»СЏ СЌС‚РѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
-        // Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ Р·Р°РїРёСЃР°РЅ РІ InvalidResults РµСЃР»Рё validator.isValid РІРµСЂРЅРµС‚ false РґР»СЏ СЌС‚РѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
-        // Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё СѓР¶Рµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
+        // Добавить таск на выполнение и валидатор результата. Результат таска будет записан в ValidResults если validator.isValid вернет true для этого результата
+        // Результат таска будет записан в InvalidResults если validator.isValid вернет false для этого результата
+        // Бросает Эксепшн если уже был вызван метод execute()
         void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException;
 
-        // Р’С‹РїРѕР»РЅРёС‚СЊ РІСЃРµ РґРѕР±Р°РІР»РµРЅС‹Рµ С‚Р°СЃРєРё
+        // Выполнить все добавленые таски
         void execute();
 
-        // РџРѕР»СѓС‡РёС‚СЊ РІР°Р»РёРґРЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹. Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё РЅРµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
+        // Получить валидные результаты. Бросает Эксепшн если не был вызван метод execute()
         List getValidResults();
 
-        // РџРѕР»СѓС‡РёС‚СЊ РЅРµРІР°Р»РёРґРЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹. Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё РЅРµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
+        // Получить невалидные результаты. Бросает Эксепшн если не был вызван метод execute()
         List getInvalidResults();
-
     }
-
 
     public class ExecutorImpl<T> implements Executor<T> {
 
         List<Task<? extends T>> taskExecutor = new ArrayList();
-        List<? extends T> number = new ArrayList();
+
+        List<? super T> number = new ArrayList();
+
+        Map<Task<? extends T>, Validator<? super T>> selectionNumberValidator = new HashMap<>();
+
         boolean flag = false;
 
         @Override
@@ -48,22 +48,20 @@ public class GenericsModul {
 
             if (flag != true) {
                 taskExecutor.add(task);
-            } else {
-                throw new MethodHasBeenStartedException("РњРµС‚РѕРґ execute Р±С‹Р» Р·Р°РїСѓС‰РµРЅ СЂР°РЅСЊС€Рµ ");
-            }
+                selectionNumberValidator.put(task, null);
 
+            } else {
+                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
+            }
         }
 
         @Override
         public void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException {
-            if (validator.isValid(task.getResult())) {
-                taskExecutor.add(task);
-            }
 
             if (flag != true) {
-                taskExecutor.add(task);
+                selectionNumberValidator.put(task, validator);
             } else {
-                throw new MethodHasBeenStartedException("РњРµС‚РѕРґ execute Р±С‹Р» Р·Р°РїСѓС‰РµРЅ СЂР°РЅСЊС€Рµ ");
+                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
             }
 
         }
@@ -83,43 +81,42 @@ public class GenericsModul {
 
             for (int i = 0; i < taskExecutor.size(); i++) {
 
-                if (Validator.isValid(taskExecutor.get(i).getResult())) {
+                if (taskExecutor.get(i) != null) {
+                    if (selectionNumberValidator.get(taskExecutor.get(i)).isValid(taskExecutor.get(i).getResult())) {
+                        number.add(taskExecutor.get(i).getResult());
+                    }
+                } else {
                     number.add(taskExecutor.get(i).getResult());
                 }
             }
             return number;
         }
-
 
         @Override
         public List getInvalidResults() {
 
             for (int i = 0; i < taskExecutor.size(); i++) {
 
-                if (Validator.isValid(taskExecutor.get(i).getResult())) {
+                if (!selectionNumberValidator.get(taskExecutor.get(i)).isValid(taskExecutor.get(i).getResult())) {
                     number.add(taskExecutor.get(i).getResult());
                 }
             }
             return number;
         }
-
     }
-
 
     //
     public interface Task<T> {
-
-        // РњРµС‚РѕРґР° Р·Р°РїСѓСЃРєР°РµС‚ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ
+        // Метода запускает таск на выполнение
         void execute();
 
-        // Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ
+        // Возвращает результат выполнения
         T getResult();
-
 
     }
 
     public class LongTask implements Task<Long> {
-        long result;
+        Long result;
 
         public LongTask(long result) {
 
@@ -129,23 +126,22 @@ public class GenericsModul {
 
         @Override
         public void execute() {
-            result = result + 1100L;
+            result = result + 1L;
 
         }
 
         @Override
         public Long getResult() {
-            if (result < 1111L) {
+            if (result < 1L) {
                 return 0L;
             }
             return result;
         }
     }
 
-
     //
     public interface Validator<T> {
-        // Р’Р°Р»РёРґРёСЂСѓРµС‚ РїРµСЂРµРґР°РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
+        // Валидирует переданое значение
         boolean isValid(T result);
     }
 
@@ -165,7 +161,7 @@ public class GenericsModul {
     }
 
 
-    // РїСЂРёРјРµСЂ РёСЃРїРѕС‚Р»СЊР·РѕРІР°РЅРёСЏ
+    // пример испотльзования
 
     public void test(List<Task<Integer>> intTasks) throws MethodHasBeenStartedException {
         Executor<Number> numberExecutor = new ExecutorImpl<>();
@@ -185,8 +181,5 @@ public class GenericsModul {
         for (Number number : numberExecutor.getInvalidResults()) {
             System.out.println(number);
         }
-    }
-
+    }*/
 }
-
-

@@ -1,4 +1,4 @@
-package ånterprise.generics;
+package Ğµnterprise.generics;
 
 /**
  * Created by Pavel on 20.03.2016.

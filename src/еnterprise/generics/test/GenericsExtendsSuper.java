@@ -1,24 +1,18 @@
-package generics;
+package ånterprise.generics.test;
 
-
-import com.sun.org.apache.xpath.internal.operations.*;
 import junit.framework.TestCase;
-import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
-import sun.plugin.javascript.navig.Array;
 
-import java.lang.String;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.remove;
 
-
-public class GenericsExtendsSuper extends TestCase {
-
-
+/**
+ * Created by Pavel on 20.03.2016.
+ */
+public class GenericsExtendsSuper  extends TestCase {
     @Test
     public void testPersonList() throws Exception {
         List<Person> persons = Arrays.asList(new Person("1", "2"), new Person("3", "4"), new Person("1", ""));
@@ -31,7 +25,7 @@ public class GenericsExtendsSuper extends TestCase {
         System.out.println(isValidList(citizen, new PersonValidator()));
 
 
-       List<Citizen> filtredCitezen = filterInValid(citizen, new PersonValidator());
+        List<Citizen> filtredCitezen = filterInValid(citizen, new PersonValidator());
     }
 
 
@@ -66,7 +60,7 @@ public class GenericsExtendsSuper extends TestCase {
 
 
     public interface Validator<T> {
-       boolean isValid(T value);
+        boolean isValid(T value);
     }
 
 
@@ -130,6 +124,4 @@ public class GenericsExtendsSuper extends TestCase {
         }
 
     }
-
-
 }
