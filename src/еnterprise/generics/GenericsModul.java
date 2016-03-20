@@ -14,16 +14,16 @@ import java.util.List;
 public class GenericsModul {
 
 
-    public interface Executor <T> {
+    public interface Executor<T> {
 
         // Добавить таск на выполнение. Результат таска будет доступен через метод getValidResults().
         // Бросает Эксепшн если уже был вызван метод execute()
-         void  addTask(Task<? extends T> task);
+        void addTask(Task<? extends T> task) throws MethodHasBeenStartedException;
 
         // Добавить таск на выполнение и валидатор результата. Результат таска будет записан в ValidResults если validator.isValid вернет true для этого результата
         // Результат таска будет записан в InvalidResults если validator.isValid вернет false для этого результата
         // Бросает Эксепшн если уже был вызван метод execute()
-        void addTask(Task<? extends Number> task, Validator validator);
+        void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException;
 
         // Выполнить все добавленые таски
         void execute();
@@ -37,46 +37,72 @@ public class GenericsModul {
     }
 
 
+    public class ExecutorImpl<T> implements Executor<T> {
 
-    public class ExecutorImpl <T> implements Executor <Number> {
-
-        List<Task<? extends Number>> taskExecutor = new ArrayList();
-        List <Number>  number = new ArrayList();
+        List<Task<? extends T>> taskExecutor = new ArrayList();
+        List<? extends T> number = new ArrayList();
+        boolean flag = false;
 
         @Override
-        public  void addTask(Task <? extends Number> task) {
+        public void addTask(Task<? extends T> task) throws MethodHasBeenStartedException {
 
-            //  T temp = (Integer) task;
-
-            taskExecutor.add(task) ;
+            if (flag != true) {
+                taskExecutor.add(task);
+            } else {
+                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
+            }
 
         }
 
         @Override
-        public void addTask( Task <? extends Number> task, Validator validator) {
+        public void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException {
+            if (validator.isValid(task.getResult())) {
+                taskExecutor.add(task);
+            }
 
-
+            if (flag != true) {
+                taskExecutor.add(task);
+            } else {
+                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
+            }
 
         }
 
         @Override
         public void execute() {
+            flag = true;
+
             for (int i = 0; i < taskExecutor.size(); i++) {
 
+                taskExecutor.get(i).execute();
             }
-
-
         }
 
         @Override
         public List getValidResults() {
-            return null;
+
+            for (int i = 0; i < taskExecutor.size(); i++) {
+
+                if (Validator.isValid(taskExecutor.get(i).getResult())) {
+                    number.add(taskExecutor.get(i).getResult());
+                }
+            }
+            return number;
         }
+
 
         @Override
         public List getInvalidResults() {
-            return null;
+
+            for (int i = 0; i < taskExecutor.size(); i++) {
+
+                if (Validator.isValid(taskExecutor.get(i).getResult())) {
+                    number.add(taskExecutor.get(i).getResult());
+                }
+            }
+            return number;
         }
+
     }
 
 
@@ -92,13 +118,14 @@ public class GenericsModul {
 
     }
 
-    public class LongTask implements Task <Long> {
+    public class LongTask implements Task<Long> {
         long result;
 
         public LongTask(long result) {
 
             this.result = result;
         }
+
 
         @Override
         public void execute() {
@@ -116,14 +143,6 @@ public class GenericsModul {
     }
 
 
-
-
-
-
-
-
-
-
     //
     public interface Validator<T> {
         // Валидирует переданое значение
@@ -137,18 +156,18 @@ public class GenericsModul {
             return n.doubleValue() > 0;
         }
     }
-    public class StringValidator implements Validator<String> {
+
+    public class IntegerValidator implements Validator<Integer> {
         @Override
-        public boolean isValid(String s) {
-            return !s.isEmpty();
+        public boolean isValid(Integer s) {
+            return s.doubleValue() > 0;
         }
     }
 
 
-
     // пример испотльзования
 
-    public void test(List<Task<Integer>> intTasks) {
+    public void test(List<Task<Integer>> intTasks) throws MethodHasBeenStartedException {
         Executor<Number> numberExecutor = new ExecutorImpl<>();
 
         for (Task<Integer> intTask : intTasks) {

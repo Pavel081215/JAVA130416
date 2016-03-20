@@ -1,6 +1,4 @@
-package zagrebelnyy.six.file;
-
-import java.io.FileNotFoundException;
+package zagrebelnyy.six.fileException;
 
 public abstract class File {
 

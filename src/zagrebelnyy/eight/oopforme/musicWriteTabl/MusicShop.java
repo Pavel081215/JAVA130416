@@ -1,10 +1,9 @@
-package zagrebelnyy.eight.oopforme.music;
+package zagrebelnyy.eight.oopforme.musicWriteTabl;
 
 
 import zagrebelnyy.eight.Printable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Pavel on 18.01.2016.

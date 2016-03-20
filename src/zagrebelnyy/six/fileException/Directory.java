@@ -1,4 +1,4 @@
-package zagrebelnyy.six.file;
+package zagrebelnyy.six.fileException;
 
 
 import java.io.FileNotFoundException;

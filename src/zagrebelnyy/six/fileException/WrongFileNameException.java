@@ -1,4 +1,4 @@
-package zagrebelnyy.six.file;
+package zagrebelnyy.six.fileException;
 
 /**
  * Created by Pavel on 25.12.2015.

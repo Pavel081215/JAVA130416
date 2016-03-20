@@ -1,4 +1,4 @@
-package zagrebelnyy.eight.oopforme.music;
+package zagrebelnyy.eight.oopforme.musicWriteTabl;
 
 import java.util.ArrayList;
 
