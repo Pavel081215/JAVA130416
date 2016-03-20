@@ -1,14 +1,14 @@
-package ånterprise.generics;
+package Ðµnterprise.generics;
 
 import org.junit.Test;
 
 import java.util.List;
 
-import ånterprise.generics.TaskGenerics.LongTask;
-import ånterprise.generics.ExecutorGenerics.ExecutorImpl;
-import ånterprise.generics.ExecutorGenerics.Executor;
-import ånterprise.generics.TaskGenerics.Task;
-import ånterprise.generics.ValidatorGenerics.NumberValidator;
+import Ðµnterprise.generics.TaskGenerics.LongTask;
+import Ðµnterprise.generics.ExecutorGenerics.ExecutorImpl;
+import Ðµnterprise.generics.ExecutorGenerics.Executor;
+import Ðµnterprise.generics.TaskGenerics.Task;
+import Ðµnterprise.generics.ValidatorGenerics.NumberValidator;
 
 
 /**
