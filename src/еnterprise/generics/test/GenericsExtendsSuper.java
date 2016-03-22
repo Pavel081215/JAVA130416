@@ -1,4 +1,4 @@
-package ånterprise.generics.test;
+package Ðµnterprise.generics.test;
 
 import junit.framework.TestCase;
 import org.junit.Test;

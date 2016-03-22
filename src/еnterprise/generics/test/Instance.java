@@ -1,4 +1,4 @@
-package ånterprise.generics.test;
+package Ğµnterprise.generics.test;
 
 import javafx.concurrent.Task;
 

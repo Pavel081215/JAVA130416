@@ -1,5 +1,5 @@
-package ånterprise.generics;
-import ånterprise.generics.TaskGenerics.Task;
+package Ðµnterprise.generics;
+import Ðµnterprise.generics.TaskGenerics.Task;
 
 /**
  * Created by Pavel on 20.03.2016.

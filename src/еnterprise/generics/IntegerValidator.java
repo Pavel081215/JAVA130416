@@ -1,6 +1,6 @@
-package ånterprise.generics;
+package Ðµnterprise.generics;
 
-import ånterprise.generics.ValidatorGenerics.Validator;
+import Ðµnterprise.generics.ValidatorGenerics.Validator;
 
 
 public class IntegerValidator implements Validator<Integer> {

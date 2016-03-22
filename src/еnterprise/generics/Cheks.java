@@ -2,6 +2,7 @@ package еnterprise.generics;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,10 +12,25 @@ import еnterprise.generics.TaskGenerics.Task;
 
 public class Cheks {
 
-    public void test(List<Task<Integer>> intTasks) throws Exception {
+    public static void main(String[] args) throws Exception {
+        List list = new ArrayList();
+        Task<Long> longTask = new LongTask(1l);
+        Task<Long> longTask2 = new LongTask(2l);
+        Task<Long> longTask3= new LongTask(30l);
+        Task<Long> longTask4 = new LongTask(4l);
+        list.add(longTask);
+        list.add(longTask2);
+        list.add(longTask3);
+        list.add(longTask4);
+
+        Cheks cheks =new Cheks();
+            cheks.test(list);
+    }
+
+    public void test(List<Task<Long>> intTasks) throws Exception {
         Executor<Number> numberExecutor = new ExecutorImpl<>();
 
-        for (Task<Integer> intTask : intTasks) {
+        for (Task<Long> intTask : intTasks) {
             numberExecutor.addTask(intTask);
         }
         numberExecutor.addTask(new LongTask(10L), new NumberValidator());

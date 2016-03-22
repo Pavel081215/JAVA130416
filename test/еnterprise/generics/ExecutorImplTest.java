@@ -1,4 +1,4 @@
-package ånterprise.generics;
+package Ðµnterprise.generics;
 
 import org.junit.Test;
 

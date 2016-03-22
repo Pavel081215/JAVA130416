@@ -1,6 +1,6 @@
-package еnterprise.generics.test;
+package Рµnterprise.generics.test;
 
-import еnterprise.generics.MethodHasBeenStartedException;
+import Рµnterprise.generics.MethodHasBeenStartedException;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,22 +14,22 @@ public class GenericsModulTest {
     /*
     public interface Executor<T> {
 
-        // Добавить таск на выполнение. Результат таска будет доступен через метод getValidResults().
-        // Бросает Эксепшн если уже был вызван метод execute()
+        // Р”РѕР±Р°РІРёС‚СЊ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ. Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ РґРѕСЃС‚СѓРїРµРЅ С‡РµСЂРµР· РјРµС‚РѕРґ getValidResults().
+        // Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё СѓР¶Рµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
         void addTask(Task<? extends T> task) throws MethodHasBeenStartedException;
 
-        // Добавить таск на выполнение и валидатор результата. Результат таска будет записан в ValidResults если validator.isValid вернет true для этого результата
-        // Результат таска будет записан в InvalidResults если validator.isValid вернет false для этого результата
-        // Бросает Эксепшн если уже был вызван метод execute()
+        // Р”РѕР±Р°РІРёС‚СЊ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ Рё РІР°Р»РёРґР°С‚РѕСЂ СЂРµР·СѓР»СЊС‚Р°С‚Р°. Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ Р·Р°РїРёСЃР°РЅ РІ ValidResults РµСЃР»Рё validator.isValid РІРµСЂРЅРµС‚ true РґР»СЏ СЌС‚РѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+        // Р РµР·СѓР»СЊС‚Р°С‚ С‚Р°СЃРєР° Р±СѓРґРµС‚ Р·Р°РїРёСЃР°РЅ РІ InvalidResults РµСЃР»Рё validator.isValid РІРµСЂРЅРµС‚ false РґР»СЏ СЌС‚РѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р°
+        // Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё СѓР¶Рµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
         void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException;
 
-        // Выполнить все добавленые таски
+        // Р’С‹РїРѕР»РЅРёС‚СЊ РІСЃРµ РґРѕР±Р°РІР»РµРЅС‹Рµ С‚Р°СЃРєРё
         void execute();
 
-        // Получить валидные результаты. Бросает Эксепшн если не был вызван метод execute()
+        // РџРѕР»СѓС‡РёС‚СЊ РІР°Р»РёРґРЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹. Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё РЅРµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
         List getValidResults();
 
-        // Получить невалидные результаты. Бросает Эксепшн если не был вызван метод execute()
+        // РџРѕР»СѓС‡РёС‚СЊ РЅРµРІР°Р»РёРґРЅС‹Рµ СЂРµР·СѓР»СЊС‚Р°С‚С‹. Р‘СЂРѕСЃР°РµС‚ Р­РєСЃРµРїС€РЅ РµСЃР»Рё РЅРµ Р±С‹Р» РІС‹Р·РІР°РЅ РјРµС‚РѕРґ execute()
         List getInvalidResults();
     }
 
@@ -51,7 +51,7 @@ public class GenericsModulTest {
                 selectionNumberValidator.put(task, null);
 
             } else {
-                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
+                throw new MethodHasBeenStartedException("РњРµС‚РѕРґ execute Р±С‹Р» Р·Р°РїСѓС‰РµРЅ СЂР°РЅСЊС€Рµ ");
             }
         }
 
@@ -61,7 +61,7 @@ public class GenericsModulTest {
             if (flag != true) {
                 selectionNumberValidator.put(task, validator);
             } else {
-                throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
+                throw new MethodHasBeenStartedException("РњРµС‚РѕРґ execute Р±С‹Р» Р·Р°РїСѓС‰РµРЅ СЂР°РЅСЊС€Рµ ");
             }
 
         }
@@ -107,10 +107,10 @@ public class GenericsModulTest {
 
     //
     public interface Task<T> {
-        // Метода запускает таск на выполнение
+        // РњРµС‚РѕРґР° Р·Р°РїСѓСЃРєР°РµС‚ С‚Р°СЃРє РЅР° РІС‹РїРѕР»РЅРµРЅРёРµ
         void execute();
 
-        // Возвращает результат выполнения
+        // Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂРµР·СѓР»СЊС‚Р°С‚ РІС‹РїРѕР»РЅРµРЅРёСЏ
         T getResult();
 
     }
@@ -141,7 +141,7 @@ public class GenericsModulTest {
 
     //
     public interface Validator<T> {
-        // Валидирует переданое значение
+        // Р’Р°Р»РёРґРёСЂСѓРµС‚ РїРµСЂРµРґР°РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ
         boolean isValid(T result);
     }
 
@@ -161,7 +161,7 @@ public class GenericsModulTest {
     }
 
 
-    // пример испотльзования
+    // РїСЂРёРјРµСЂ РёСЃРїРѕС‚Р»СЊР·РѕРІР°РЅРёСЏ
 
     public void test(List<Task<Integer>> intTasks) throws MethodHasBeenStartedException {
         Executor<Number> numberExecutor = new ExecutorImpl<>();

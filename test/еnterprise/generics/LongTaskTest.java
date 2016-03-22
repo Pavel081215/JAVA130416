@@ -1,4 +1,4 @@
-package ånterprise.generics;
+package Ðµnterprise.generics;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
@@ -18,14 +18,13 @@ public class LongTaskTest extends TestCase {
         long actual = 2l;
         longTask.execute();
 
-        // Assert.assertEquals(expected, actual, 0);
 
-
-        Assert.assertEquals(longTask.execute(), actual);
     }
 
     @Test
     public void testGetResult() throws Exception {
+
+
 
     }
 }
