@@ -21,9 +21,7 @@ public  class LongTask implements Task<Long> {
 
     @Override
     public Long getResult() {
-        if (result < 1L) {
-            return 0L;
-        }
-        return result;
+
+        return result+2L;
     }
 }

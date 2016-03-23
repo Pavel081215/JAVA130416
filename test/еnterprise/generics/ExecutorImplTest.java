@@ -1,67 +1,77 @@
 package еnterprise.generics;
 
 import junit.framework.TestCase;
-import org.junit.*;
-import еnterprise.generics.ExecutorGenerics.Executor;
-import еnterprise.generics.TaskGenerics.Task;
+import org.junit.runners.model.TestClass;
 import еnterprise.generics.ValidatorGenerics.Validator;
+import org.junit.*;
 
+import java.util.*;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.junit.Assert.*;
-
-/**
- * Created by Pavel on 20.03.2016.
- */
-public class ExecutorImplTest extends TestCase {
 
 
-    @Ignore
-    @Test
-    public void testAddTask() throws Exception {
+public class ExecutorImplTest extends TestCase{
+    Validator<Number> validator;
+    TaskGenerics.Task<Long> task1;
+    TaskGenerics.Task<Long> task10;
+    ExecutorImpl executorImpl = new ExecutorImpl();
+    List expected = new ArrayList<>();
 
-    }
-    @Ignore
-    @Test
-    public void testAddTask1() throws Exception {
-
+    @Before
+    public void setUp() throws Exception {
+        task1 = new LongTask(-200);
+        task10 = new LongTask(10);
     }
 
     @Test
-    public void testExecute() throws Exception {
+    public void testAddTaskOneOption() throws Exception {
+        executorImpl.addTask(task10);
+    }
 
+    @Test
+    public void testAddTaskTwoOption() throws Exception {
+        validator = new NumberValidator();
+        executorImpl.addTask(task1, validator);
+    }
+
+    @Test
+    public void execute() {
+        executorImpl.execute();
     }
 
     @Test
     public void testGetValidResults() throws Exception {
+        expected.clear();
+        validator = new NumberValidator();
+        executorImpl.addTask(task10);
+        executorImpl.addTask(task1, validator);
+        executorImpl.execute();
+        List actuals = new ArrayList();
+        expected.add(13);
+        expected.add(-197);
 
-        List<Number> number1 = new ArrayList();
+        actuals.addAll(executorImpl.getValidResults());
 
-
-        List<Task<Long>> taskExecutor = new ArrayList();
-        List<Number> number = new ArrayList();
-        Map<Task<Long>, Validator<Number>> selectionNumberValidator = new HashMap<>();
-        Task<Long> task1 = new LongTask(1l);
-        Task<Long> task2 = new LongTask(30l);
-        Task<Long> task3 = new LongTask(2l);
-        Task<Long> task4 = new LongTask(4l);
-        selectionNumberValidator.put(task1, new NumberValidator());
-        selectionNumberValidator.put(task2, new NumberValidator());
-        selectionNumberValidator.put(task3, new NumberValidator());
-        selectionNumberValidator.put(task4, new NumberValidator());
-        taskExecutor.add(task1);
-        taskExecutor.add(task2);
-        taskExecutor.add(task3);
-        taskExecutor.add(task4);
-
+        //Assert.assertArrayEquals(expected, actuals);
+        Assert.assertEquals(expected, actuals);
+        // Assert.assertEquals(new HashSet(expected), new HashSet(actuals));
     }
 
-    @Ignore
     @Test
     public void testGetInvalidResults() throws Exception {
+        expected.clear();
+        validator = new NumberValidator();
+        task1 = new LongTask(-10);
+        executorImpl.addTask(task10);
+        executorImpl.addTask(task1, validator);
+        executorImpl.execute();
+        List actuals = new ArrayList();
+        expected.add(-7);
+        //expected.add(3);
+        actuals.addAll(executorImpl.getInvalidResults());
+        Assert.assertEquals(expected, actuals);
 
     }
+
+
+
 }

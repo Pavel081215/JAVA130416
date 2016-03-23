@@ -14,9 +14,9 @@ public class Cheks {
 
     public static void main(String[] args) throws Exception {
         List list = new ArrayList();
-        Task<Long> longTask = new LongTask(1l);
+        Task<Long> longTask = new LongTask(-1l);
         Task<Long> longTask2 = new LongTask(2l);
-        Task<Long> longTask3= new LongTask(30l);
+        Task<Long> longTask3= new LongTask(-30l);
         Task<Long> longTask4 = new LongTask(4l);
         list.add(longTask);
         list.add(longTask2);
@@ -33,7 +33,7 @@ public class Cheks {
         for (Task<Long> intTask : intTasks) {
             numberExecutor.addTask(intTask);
         }
-        numberExecutor.addTask(new LongTask(10L), new NumberValidator());
+        numberExecutor.addTask(new LongTask(-1000L), new NumberValidator());
 
         numberExecutor.execute();
 

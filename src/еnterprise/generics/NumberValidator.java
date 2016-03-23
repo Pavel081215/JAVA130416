@@ -9,7 +9,13 @@ public class NumberValidator implements Validator<Number> {
 
     @Override
     public boolean isValid(Number n) {
-        return n.doubleValue() < 1;
+        if (n.intValue() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+
     }
 }
 

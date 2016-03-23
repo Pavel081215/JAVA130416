@@ -9,6 +9,10 @@ public class LongValidator implements Validator<Long> {
 
     @Override
     public boolean isValid(Long s) {
-        return s > 3;
+        if (s > 0) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }
