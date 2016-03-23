@@ -24,14 +24,7 @@ public class ExecutorImpl<T> implements Executor<T> {
 
     @Override
     public void addTask(Task<? extends T> task) throws MethodHasBeenStartedException {
-
-        if (flag != true) {
-            taskExecutor.add(task);
-            selectionNumberValidator.put(task, null);
-
-        } else {
-            throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
-        }
+        addTask(task, null);
     }
 
     @Override
@@ -39,7 +32,7 @@ public class ExecutorImpl<T> implements Executor<T> {
 
         if (flag != true) {
             taskExecutor.add(task);
-            selectionNumberValidator.put(task,  validator);
+            selectionNumberValidator.put(task, validator);
         } else {
             throw new MethodHasBeenStartedException("Метод execute был запущен раньше ");
         }
@@ -62,7 +55,6 @@ public class ExecutorImpl<T> implements Executor<T> {
 
         for (int i = 0; i < taskExecutor.size(); i++) {
 
-
             if (selectionNumberValidator.get(taskExecutor.get(i)) != null) {
                 if (selectionNumberValidator.get(taskExecutor.get(i)).isValid(taskExecutor.get(i).getResult())) {
                     number.add(taskExecutor.get(i).getResult());
@@ -80,7 +72,7 @@ public class ExecutorImpl<T> implements Executor<T> {
         for (int i = 0; i < taskExecutor.size(); i++) {
 
             if (selectionNumberValidator.get(taskExecutor.get(i)) != null) {
-                if (selectionNumberValidator.get(taskExecutor.get(i)).isValid(taskExecutor.get(i).getResult())) {
+                if (!selectionNumberValidator.get(taskExecutor.get(i)).isValid(taskExecutor.get(i).getResult())) {
                     number.add(taskExecutor.get(i).getResult());
                 }
             }
