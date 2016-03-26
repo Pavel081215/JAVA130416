@@ -9,17 +9,17 @@ import java.util.*;
 import java.util.ArrayList;
 
 
-public class ExecutorImplTest extends TestCase{
+public class ExecutorImplTest extends TestCase {//extends TestCase
     Validator<Number> validator;
     TaskGenerics.Task<Long> task1;
     TaskGenerics.Task<Long> task10;
-    ExecutorImpl executorImpl = new ExecutorImpl();
-    List expected = new ArrayList<>();
+    ExecutorImpl<Number> executorImpl = new ExecutorImpl();
+    List<Long> expected = new ArrayList<>();
 
     @Before
     public void setUp() throws Exception {
         task1 = new LongTask(-200);
-        task10 = new LongTask(10);
+        task10 = new LongTask(10L);
     }
 
     @Test
@@ -46,12 +46,12 @@ public class ExecutorImplTest extends TestCase{
         executorImpl.addTask(task1, validator);
         executorImpl.execute();
         List actuals = new ArrayList();
-        expected.add(13);
-        expected.add(-197);
+        expected.add(13L);
+       // expected.add(-197L);
 
         actuals.addAll(executorImpl.getValidResults());
 
-        //Assert.assertArrayEquals(expected, actuals);
+       // Assert.assertArrayEquals(expected, actuals);
         Assert.assertEquals(expected, actuals);
         // Assert.assertEquals(new HashSet(expected), new HashSet(actuals));
     }
@@ -65,7 +65,7 @@ public class ExecutorImplTest extends TestCase{
         executorImpl.addTask(task1, validator);
         executorImpl.execute();
         List actuals = new ArrayList();
-        expected.add(-7);
+        expected.add(-7L);
         //expected.add(3);
         actuals.addAll(executorImpl.getInvalidResults());
         Assert.assertEquals(expected, actuals);

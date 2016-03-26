@@ -14,9 +14,9 @@ import java.util.Map;
  * Created by Pavel on 20.03.2016.
  */
 public class ExecutorImpl<T> implements Executor<T> {
-    List<Task<? extends T>> taskExecutor = new ArrayList();
+    List<Task<? extends T>> taskExecutor = new ArrayList<>();
 
-    List<T> number = new ArrayList();
+    List<T> number = new ArrayList<>();
 
     Map<Task<? extends T>, Validator<? super T>> selectionNumberValidator = new HashMap<>();
 
@@ -30,7 +30,7 @@ public class ExecutorImpl<T> implements Executor<T> {
     @Override
     public void addTask(Task<? extends T> task, Validator<? super T> validator) throws MethodHasBeenStartedException {
 
-        if (flag != true) {
+        if (!flag) {
             taskExecutor.add(task);
             selectionNumberValidator.put(task, validator);
         } else {

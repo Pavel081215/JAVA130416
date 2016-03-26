@@ -77,7 +77,7 @@ public class SemaphoreSynchronize implements SemaphoreMy {
     // Возвращает количество свободных разрешений на данный момент.
     @Override
     public int getAvailablePermits() {
-        return permitMy - countsAllPermits;
+        return  countsAllPermits;
 
 
     }
