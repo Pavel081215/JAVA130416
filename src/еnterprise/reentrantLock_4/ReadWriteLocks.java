@@ -25,7 +25,7 @@ public class ReadWriteLocks {
             ints[i] =random.nextInt();
         }
     }
-*/
+
 
 
     public static class ConcurrentArray<T> {
@@ -65,5 +65,5 @@ public class ReadWriteLocks {
                 readWriteLock.readLock().unlock();
             }
         }
-    }
+    }*/
 }
