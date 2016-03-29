@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class ReadWriteLocks {
     public static final int ARRAY_LENGTH = 10;
 
-    public static void main(String[] args) {
+ /*   public static void main(String[] args) {
         ConcurrentArray<Integer> array = new ConcurrentArray<>(ARRAY_LENGTH);
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
@@ -25,7 +25,7 @@ public class ReadWriteLocks {
             ints[i] =random.nextInt();
         }
     }
-
+*/
 
 
     public static class ConcurrentArray<T> {
