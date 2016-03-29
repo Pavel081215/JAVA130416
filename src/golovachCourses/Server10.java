@@ -32,9 +32,12 @@ public class Server10 {
                 System.out.println("------------------------");
                 System.out.print(new String(request));
                 System.out.println("------------------------");
+
+                String info ="ПРивет мир";
+                byte[] result = info.getBytes();
                 //write response
-                byte[] response = new Date().toString().getBytes(); //convert in case to put to byte[]
-                out.write(response);
+            //    byte[] response =  result;       //new Date().toString().getBytes(); //convert in case to put to byte[]
+                out.write(result);
             }finally {
                socket.close();
             }

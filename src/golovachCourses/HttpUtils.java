@@ -25,7 +25,7 @@ public class HttpUtils {
         int headerLen = 0;
         while (true) {
             int count = in.read(buff,headerLen,buff.length - headerLen);//,headerLen,buff.length - headerLen
-            if (count <= 0) {
+            if (count < 0) {
                 throw new RuntimeException("Incoming connection closed but .....  ");
             } else {
                 headerLen += count;
