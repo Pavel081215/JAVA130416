@@ -5,68 +5,37 @@ package еnterprise.synchronize_3;
  */
 public class WorkerMy implements Runnable {
 
+    private int indexes;
 
     public static void main(String[] args) {
-        SemaphoreSynchronize semaphoreSynchronize = new SemaphoreSynchronize(1);
+        SemaphoreSynchronize semaphore = new SemaphoreSynchronize(0);
 
-        for (int i = 1; i <=100; i++) {
-            new Thread(new WorkerMy(i,semaphoreSynchronize )).start();
+        for (int i = 0; i < 3; i++) {
+            new Thread(new WorkerMy(i, semaphore)).start();
         }
     }
 
 
+    private SemaphoreSynchronize semaphoreSynchronize;
 
-    int indecs;
-    SemaphoreSynchronize semaphoreSynchronize;
-
-    public WorkerMy(int indecs, SemaphoreSynchronize semaphoreSynchronize) {
-        this.indecs = indecs;
+    private WorkerMy(int indexes, SemaphoreSynchronize semaphoreSynchronize) {
+        this.indexes = indexes;
         this.semaphoreSynchronize = semaphoreSynchronize;
-    }
-
-    public WorkerMy(SemaphoreSynchronize semaphoreSynchronize) {
-
-
     }
 
 
     @Override
     public void run() {
-        System.out.println("№1Старт" + indecs);
-      /*  try {
-            System.out.println("№2Стоп" + indecs);
-            semaphoreSynchronize.acquire();
-            System.out.println("№3Работает" + indecs);
-            System.out.println("№4Отпускаем" + indecs);
-            semaphoreSynchronize.release();
-
-
-
-            System.out.println("№8Количестов свободных" + indecs);
-            semaphoreSynchronize.getAvailablePermits();
-            System.out.println("№9КОНЕЦ");
-
-
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }*/
-        System.out.println("№1Старт + второй блок" + indecs);
+        System.out.println("Старт" + Thread.currentThread().getName());
         try {
+            System.out.println("  Подошёл к семофору " + Thread.currentThread().getName());
+            semaphoreSynchronize.acquire(1);
+            System.out.println("Работает после семофора" + Thread.currentThread().getName());
 
-
-            System.out.println("№5Стоп (2 потока)" + indecs);
-            semaphoreSynchronize.acquire(11);
-            System.out.println("№6Работает (2 потока)" + indecs);
-            System.out.println("№7Отпускаем(2 потока)" + indecs);
-            semaphoreSynchronize.release(10);
-
-            System.out.println("№8Количестов свободных" + semaphoreSynchronize.getAvailablePermits());
-
-            System.out.println("№9КОНЕЦ");
-
-
-
+            semaphoreSynchronize.release(1);
+            System.out.println("Отпустил " + Thread.currentThread().getName());
+            System.out.println("Количестов свободных" + semaphoreSynchronize.getAvailablePermits() + Thread.currentThread().getName());
+            System.out.println("КОНЕЦ" + Thread.currentThread().getName());
         } catch (Exception e) {
             e.printStackTrace();
         }

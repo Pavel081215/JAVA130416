@@ -8,12 +8,12 @@ import java.util.*;
 import java.util.ArrayList;
 
 
-public class ExecutorImplTest extends TestCase {//extends TestCase
-    Validator<Number> validator;
-    TaskGenerics.Task<Long> task1;
-    TaskGenerics.Task<Long> task10;
-    ExecutorImpl<Number> executorImpl = new ExecutorImpl();
-    List<Long> expected = new ArrayList<>();
+public class ExecutorImplTest   {
+   private Validator<Number> validator;
+    private TaskGenerics.Task<Long> task1;
+    private TaskGenerics.Task<Long> task10;
+    private ExecutorImpl<Number> executorImpl = new ExecutorImpl();
+    private  List<Long> expected = new ArrayList<>();
 
     @Before
     public void setUp() throws Exception {

@@ -19,7 +19,7 @@ public class SynchronizedExample {
 
     public static synchronized int increment() {
 
-            return counter++;
+        return counter++;
 
     }
 
@@ -37,11 +37,11 @@ public class SynchronizedExample {
             for (Integer anInt : aggregator.ints) {
                 if (!integerSet.add(anInt)) {
                     System.out.println("Error, duplicate found:  " + anInt);
-                    isValid =  false;
+                    isValid = false;
                 }
             }
         }
-        if (isValid){
+        if (isValid) {
             System.out.println(" No duplicates  ");
         }
     }

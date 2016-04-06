@@ -1,14 +1,10 @@
 package еnterprise.synchronize_3;
 
-//import java.util.concurrent.Semaphore;
 
-/**
- * Created by Pavel on 22.03.2016.
- */
 public class SemaphoreSynchronize implements SemaphoreMy {
 
     private int permitMy = 0;
-    private Object lock = new Object();
+    private final Object lock = new Object();
     private int countsAllPermits = 0;
     // private int countsPermits = 0;
 
@@ -20,35 +16,37 @@ public class SemaphoreSynchronize implements SemaphoreMy {
     // Запрашивает разрешение. Если есть свободное захватывает его. Если нет - приостанавливает поток до тех пор пока не появится свободное разрешение.
     @Override
     public void acquire() {
+        permitMy = permitMy - countsAllPermits;
         synchronized (lock) {
             if (0 >= permitMy) {
                 try {
+                    countsAllPermits++;
                     lock.wait();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            permitMy--;
+            //permitMy--;
         }
-        countsAllPermits++;
+
     }
 
     // Запрашивает переданое количество разрешений. Если есть переданое количество свободных разрешений захватывает их.
     // Если нет - приостанавливает поток до тех пор пока не появится переданое колтчество свободных разрешений.
 
     @Override
-    public void acquire(int permits) {
+    public synchronized void acquire(int permit) {
         synchronized (lock) {
-            if (0 >= permits) {
+            if (countsAllPermits >= (permit - countsAllPermits)) {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-            permits--;
+            countsAllPermits++;
         }
-        countsAllPermits++;
     }
 
     // Отпускает разрешение возвращая его семафору.
@@ -56,8 +54,8 @@ public class SemaphoreSynchronize implements SemaphoreMy {
     @Override
     public void release() {
         synchronized (lock) {
+            countsAllPermits--;
             lock.notify();
-            countsAllPermits++;
         }
     }
 
@@ -65,20 +63,17 @@ public class SemaphoreSynchronize implements SemaphoreMy {
     @Override
     public void release(int permits) {
         synchronized (lock) {
-            if (0 >= permits) {
+            for (int i = 0; i < permits; i++) {
+                countsAllPermits--;
                 lock.notify();
-                permits--;
-                countsAllPermits++;
             }
         }
-
     }
 
     // Возвращает количество свободных разрешений на данный момент.
     @Override
     public int getAvailablePermits() {
-        return  countsAllPermits;
-
+        return countsAllPermits;
 
     }
 }
