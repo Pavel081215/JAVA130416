@@ -16,24 +16,26 @@ import java.util.stream.IntStream;
  */
 public class ExecutoraExample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        //new ExecutoraExample().testExecute();
+       // new ExecutoraExample().testExecute();
         //new ExecutoraExample().testSubmit();
         //new ExecutoraExample().testException();
         //new ExecutoraExample().testInvokeAny();
-        //new ExecutoraExample().testInvokeAll();
+        new ExecutoraExample().testInvokeAll();
         //new ExecutoraExample().testScheduled();
-        new ExecutoraExample().testScheduledAtFixedRate();
+        //new ExecutoraExample().testScheduledAtFixedRate();
     }
 
     public void testExecute() {
-        Executor executor = Executors.newSingleThreadExecutor();
+        Executor executor = Executors.newFixedThreadPool(12);
         System.out.println(Thread.currentThread().getName() + ":   submits  task ");
+        // for (int i =0; i < 7; i ++){
         executor.execute(new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName() + ": Async task started ");
             }
         });
+        //  }
     }
 
     public void testSubmit() throws ExecutionException, InterruptedException {
@@ -130,8 +132,6 @@ public class ExecutoraExample {
         Thread.sleep(10000);
         executorService.shutdown();
     }
-
-
 
 
 }
