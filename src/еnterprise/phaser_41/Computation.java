@@ -1,10 +1,8 @@
 package еnterprise.phaser_41;
 
-
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Phaser;
 
 public class Computation {
 
@@ -14,7 +12,6 @@ public class Computation {
             long valuesFirst = (long) values[i];
             result = result + (valuesFirst * valuesFirst);
         }
-        System.out.println(Thread.currentThread().getName() + ": Async task started ");
         return result;
     }
 
@@ -42,25 +39,15 @@ public class Computation {
     }
 
 
-    public void runTasks(List<Runnable> tasks, Phaser phasert) throws InterruptedException {
+    public void runTasks(List<Runnable> tasks) throws InterruptedException {
         Executor executors = Executors.newFixedThreadPool(10);
-        System.out.println("файзер1");
+
         for (final Runnable task : tasks) {
-            phasert.register();
-            new Thread() {
-                public void run() {
-                    do {
-                        phasert.arriveAndAwaitAdvance();
-                        System.out.println("файзер3");
-                        executors.execute(task);
-                        System.out.println("файзер4");
-                    } while (!phasert.isTerminated());
-                }
-            }.start();
+
+            executors.execute(task);
+
             Thread.sleep(500);
         }
-
-        phasert.arriveAndDeregister();
 
 
     }

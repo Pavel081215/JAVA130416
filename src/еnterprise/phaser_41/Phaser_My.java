@@ -1,18 +1,12 @@
 package еnterprise.phaser_41;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Phaser;
 
-
 public class Phaser_My implements SquareSum {
 
-    final Phaser phaser = new Phaser(1) {
-
-        protected boolean onAdvance(int phase, int registeredParties) {
-            return phase >= 0 || registeredParties == 1;
-        }
-    };
-
+    final Phaser phaser = new Phaser(3);
     public static long resultNew = 0;
     private int step;
     List<Runnable> tasks = new ArrayList<>();
@@ -28,14 +22,12 @@ public class Phaser_My implements SquareSum {
             tasks.add(new Runnable() {
                 @Override
                 public void run() {
-
-                    new Worker(values, temp1, temp2).run();
-                    System.out.println("getSquareSum Внутри RUN");
+                    new Worker(phaser, values, temp1, temp2).run();
                 }
             });
         }
 
-        computation.runTasks(tasks, phaser);
+        computation.runTasks(tasks);
         Thread.sleep(1000);
         return resultNew;
     }

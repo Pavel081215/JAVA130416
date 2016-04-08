@@ -1,14 +1,15 @@
 package еnterprise.phaser_41;
 
+import java.util.concurrent.Phaser;
 
-public class Worker implements Runnable{
+public class Worker implements Runnable {
     private Computation computation = new Computation();
 
     private int[] array;
+    private Phaser phaser;
 
-
-    public Worker(int[] array, int pointStart, int pointFinsh) {
-
+    public Worker(Phaser phaser, int[] array, int pointStart, int pointFinsh) {
+        this.phaser = phaser;
         this.array = array;
         this.pointStart = pointStart;
         this.pointFinish = pointFinsh;
@@ -16,12 +17,25 @@ public class Worker implements Runnable{
 
     private int pointStart;
     private int pointFinish;
-    public static long result;
+    public long result;
 
 
     public void run() {
-        System.out.println(Thread.currentThread().getName() + "Worker");
-        Phaser_My.resultNew += computation.squareValuesArray(array, pointStart, pointFinish);
+        result = computation.squareValuesArray(array, pointStart, pointFinish);
+
+        phaser.arriveAndAwaitAdvance();
+
+        System.out.println(" выполняет фазу " + phaser.getPhase() + "  потоком - " + Thread.currentThread().getName() + "Промежуточный результат - " + result);
+
+        Phaser_My.resultNew += result;
+
+        phaser.arriveAndAwaitAdvance();
+
+
+        System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
+
+        phaser.arriveAndDeregister();
+
 
     }
 }
