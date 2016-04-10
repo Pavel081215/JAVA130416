@@ -21,20 +21,38 @@ public class Worker implements Runnable {
 
 
     public void run() {
-        result = computation.squareValuesArray(array, pointStart, pointFinish);
 
-        phaser.arriveAndAwaitAdvance();
+        result = computation.squareValuesArray(array, pointStart, pointFinish);
 
         System.out.println(" выполняет фазу " + phaser.getPhase() + "  потоком - " + Thread.currentThread().getName() + "Промежуточный результат - " + result);
 
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
+                 phaser.arriveAndAwaitAdvance();
+
         Phaser_My.resultNew += result;
-
-        phaser.arriveAndAwaitAdvance();
-
 
         System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
 
-        phaser.arriveAndDeregister();
+
+
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+                    phaser.arriveAndAwaitAdvance();
+
+
+
+        System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
+                    phaser.arriveAndDeregister();
 
 
     }

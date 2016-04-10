@@ -10,18 +10,18 @@ public class ThreadsApp {
         new Thread(new PhaseThread(phaser, "PhaseThread 2")).start();
 
         // ждем завершения фазы 0
-        int phase = phaser.getPhase();
+       // int phase = phaser.getPhase();
         phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена"+ "__" + Thread.currentThread().getName());
+        System.out.println("Фаза " + "phase" + " завершена"+ "__" + Thread.currentThread().getName());
         // ждем завершения фазы 1
-        phase = phaser.getPhase();
+       // phase = phaser.getPhase();
         phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена"+ "__" + Thread.currentThread().getName());
+        System.out.println("Фаза " + "phase" + " завершена"+ "__" + Thread.currentThread().getName());
 
         // ждем завершения фазы 2
-        phase = phaser.getPhase();
+       // phase = phaser.getPhase();
         phaser.arriveAndAwaitAdvance();
-        System.out.println("Фаза " + phase + " завершена"+ "__" + Thread.currentThread().getName());
+        System.out.println("Фаза " + "phase" + " завершена"+ "__" + Thread.currentThread().getName());
 
         phaser.arriveAndDeregister();
     }
