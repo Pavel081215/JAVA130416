@@ -9,18 +9,10 @@ public class Cheks {
 
         phaser_My.getSquareSum(x,y);
 
-               phaser_My.phaser.arriveAndAwaitAdvance();
-
-        System.out.println("Фаза  завершена"+ phaser_My.phaser.getPhase() + "__" + Thread.currentThread().getName());
-
-               phaser_My.phaser.arriveAndAwaitAdvance();
-
-
-        System.out.println("Фаза  завершена"+ phaser_My.phaser.getPhase() + "__" + Thread.currentThread().getName());
 
         System.out.println(Phaser_My.resultNew);
 
-              phaser_My.phaser.arriveAndDeregister();
+
 
     }
 

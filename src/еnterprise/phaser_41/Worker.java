@@ -26,30 +26,13 @@ public class Worker implements Runnable {
 
         System.out.println(" выполняет фазу " + phaser.getPhase() + "  потоком - " + Thread.currentThread().getName() + "Промежуточный результат - " + result);
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-
                  phaser.arriveAndAwaitAdvance();
 
         Phaser_My.resultNew += result;
 
         System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
 
-
-
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
                     phaser.arriveAndAwaitAdvance();
-
-
 
         System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
                     phaser.arriveAndDeregister();
