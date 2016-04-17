@@ -17,7 +17,7 @@ public class Locks {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    locks.testTryLock();
+                    locks.testLock();
                 }
             }).start();
         }

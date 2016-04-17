@@ -1,26 +1,29 @@
 package еnterprise.phaser_41;
 
 import java.util.List;
+import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Computation {
 
-   static Executor executors = Executors.newFixedThreadPool(10);
 
-    public long squareValuesArray(int[] values, int start, int finish) {
+    static Executor executors = Executors.newFixedThreadPool(3);
+
+    public synchronized void squareValuesArray(int[] values, int start, int finish) {
         long result = 0;
         for (int i = start; i < finish; i++) {
             long valuesFirst = (long) values[i];
             result = result + (valuesFirst * valuesFirst);
         }
-        return result;
+
+        SumSquare.resultNew += result;
+
     }
 
 
-
-    public int[] arrayIndicesForDividingMainBody(int[] values, int numberOfThreads, int step) throws ArrayLessOfThreadNumberExceptions {
+    public synchronized int[] arrayIndicesForDividingMainBody(int[] values, int numberOfThreads, int step) throws ArrayLessOfThreadNumberExceptions {
         int[] index = new int[numberOfThreads + 1];
         if (values.length >= numberOfThreads) {
             index[0] = 0;
@@ -39,19 +42,17 @@ public class Computation {
     }
 
 
-    public int calculationStepArray(int[] values, int numberOfThreads) {
+    public synchronized int calculationStepArray(int[] values, int numberOfThreads) {
         int temp = values.length % numberOfThreads;
         return (values.length - temp) / numberOfThreads;
     }
 
 
-
-    public void runTasks(List<Worker> tasks) throws InterruptedException {
+    public synchronized void runTasks(List<Worker> tasks) throws InterruptedException {
 
 
         for (final Runnable task : tasks) {
             executors.execute(task);
-
         }
 
 

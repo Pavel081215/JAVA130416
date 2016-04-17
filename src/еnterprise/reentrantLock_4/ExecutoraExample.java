@@ -16,11 +16,11 @@ import java.util.stream.IntStream;
  */
 public class ExecutoraExample {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-       // new ExecutoraExample().testExecute();
+        new ExecutoraExample().testExecute();
         //new ExecutoraExample().testSubmit();
         //new ExecutoraExample().testException();
         //new ExecutoraExample().testInvokeAny();
-        new ExecutoraExample().testInvokeAll();
+       // new ExecutoraExample().testInvokeAll();
         //new ExecutoraExample().testScheduled();
         //new ExecutoraExample().testScheduledAtFixedRate();
     }
@@ -28,14 +28,15 @@ public class ExecutoraExample {
     public void testExecute() {
         Executor executor = Executors.newFixedThreadPool(12);
         System.out.println(Thread.currentThread().getName() + ":   submits  task ");
-        // for (int i =0; i < 7; i ++){
+         for (int i =0; i < 7; i ++){
         executor.execute(new Runnable() {
             @Override
             public void run() {
                 System.out.println(Thread.currentThread().getName() + ": Async task started ");
             }
         });
-        //  }
+          }
+
     }
 
     public void testSubmit() throws ExecutionException, InterruptedException {
@@ -94,7 +95,8 @@ public class ExecutoraExample {
         List<Callable<String>> callables = new ArrayList<>();
         Random random = new Random();
         IntStream.range(0, 3).forEach(i -> callables.add(() -> {
-            Thread.sleep(random.nextInt(1000));
+           // Thread.sleep(random.nextInt(1000));
+
             return String.valueOf(i);
         }));
 
