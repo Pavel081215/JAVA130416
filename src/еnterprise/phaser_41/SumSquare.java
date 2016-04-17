@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Phaser;
 
-public class Phaser_My implements SquareSum {
+public class SumSquare implements SquareSum {
 
-    final Phaser phaser = new Phaser(3);
+    protected final Phaser phaser = new Phaser(4);
     public static long resultNew = 0;
     private int step;
-    List<Runnable> tasks = new ArrayList<>();
+    private List<Worker> tasks = new ArrayList<>();
     private Computation computation = new Computation();
 
     @Override
@@ -19,16 +19,20 @@ public class Phaser_My implements SquareSum {
         for (int i = 0; i < numberOfThreads; i++) {
             int temp1 = index[i];
             int temp2 = index[i + 1];
-            tasks.add(new Runnable() {
-                @Override
-                public void run() {
-                    new Worker(phaser, values, temp1, temp2).run();
-                }
-            });
+            tasks.add(new Worker(phaser, values, temp1, temp2));
         }
 
+
+
         computation.runTasks(tasks);
-        Thread.sleep(1000);
+
+
+        phaser.arriveAndAwaitAdvance();
+
+
+        phaser.arriveAndAwaitAdvance();
+     //   Computation.executors.shutdown();
+
         return resultNew;
     }
 }

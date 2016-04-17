@@ -32,25 +32,29 @@ public class PhaserExample {
 
     void runTasks(List<Runnable> tasks) throws InterruptedException {
 
-        final Phaser phaser = new Phaser(2)
+        final Phaser phaser = new Phaser(1)
         {
             protected boolean onAdvance(int phase, int registeredParties)
             {
-                return phase >= 0 || registeredParties == 0;
+                return phase >= 2 || registeredParties == 0;
             }
         };
 
         for (final Runnable task : tasks) {
             phaser.register();
+            System.out.println(Thread.currentThread().getName() + "регистрация");
             new Thread() {
                 public void run() {
                     do {
+                       // System.out.println(Thread.currentThread().getName() + "пришёл к барьеру");
+                        System.out.println(Thread.currentThread().getName() + "пришёл к барьеру фаза %№ " + phaser.getPhase());
+
                         phaser.arriveAndAwaitAdvance();
                         task.run();
                     } while (!phaser.isTerminated());
                 }
             }.start();
-            Thread.sleep(500);
+          //  Thread.sleep(500);
         }
 
         phaser.arriveAndDeregister();

@@ -1,10 +1,13 @@
 package еnterprise.phaser_41;
 
 import java.util.concurrent.Phaser;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Worker implements Runnable {
     private Computation computation = new Computation();
-
+    private Lock lockFirstPart = new ReentrantLock();
+    private Lock lockSecondPatr = new ReentrantLock();
     private int[] array;
     private Phaser phaser;
 
@@ -21,21 +24,19 @@ public class Worker implements Runnable {
 
 
     public void run() {
+        // System.out.println(Thread.currentThread().getName() + "меин регистрация");
 
-        result = computation.squareValuesArray(array, pointStart, pointFinish);
+        lockFirstPart.lock();
+        long result = computation.squareValuesArray(array, pointStart, pointFinish);
+        lockFirstPart.unlock();
+        System.out.println(Thread.currentThread().getName() + "Первая фаза  " + result);
+        phaser.arriveAndAwaitAdvance();
 
-        System.out.println(" выполняет фазу " + phaser.getPhase() + "  потоком - " + Thread.currentThread().getName() + "Промежуточный результат - " + result);
-
-                 phaser.arriveAndAwaitAdvance();
-
-        Phaser_My.resultNew += result;
-
-        System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
-
-                    phaser.arriveAndAwaitAdvance();
-
-        System.out.println(" выполняет фазу " + phaser.getPhase() + "__" + Thread.currentThread().getName() + "Промежуточный результат - " + Phaser_My.resultNew);
-                    phaser.arriveAndDeregister();
+        lockSecondPatr.lock();
+        SumSquare.resultNew += result;
+        lockSecondPatr.unlock();
+        System.out.println(Thread.currentThread().getName() + "Вторая  фаза  " + SumSquare.resultNew);
+        phaser.arriveAndAwaitAdvance();
 
 
     }

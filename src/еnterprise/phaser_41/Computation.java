@@ -2,9 +2,12 @@ package еnterprise.phaser_41;
 
 import java.util.List;
 import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Computation {
+
+   static Executor executors = Executors.newFixedThreadPool(10);
 
     public long squareValuesArray(int[] values, int start, int finish) {
         long result = 0;
@@ -14,6 +17,8 @@ public class Computation {
         }
         return result;
     }
+
+
 
     public int[] arrayIndicesForDividingMainBody(int[] values, int numberOfThreads, int step) throws ArrayLessOfThreadNumberExceptions {
         int[] index = new int[numberOfThreads + 1];
@@ -33,20 +38,20 @@ public class Computation {
         return index;
     }
 
+
     public int calculationStepArray(int[] values, int numberOfThreads) {
         int temp = values.length % numberOfThreads;
         return (values.length - temp) / numberOfThreads;
     }
 
 
-    public void runTasks(List<Runnable> tasks) throws InterruptedException {
-        Executor executors = Executors.newFixedThreadPool(10);
+
+    public void runTasks(List<Worker> tasks) throws InterruptedException {
+
 
         for (final Runnable task : tasks) {
-
             executors.execute(task);
 
-            Thread.sleep(500);
         }
 
 

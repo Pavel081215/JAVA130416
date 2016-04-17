@@ -1,5 +1,7 @@
 package еnterprise.synchronize_3.example;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by Pavel on 23.03.2016.
@@ -8,6 +10,7 @@ public class Worker extends Thread {
     private Semaphore semaphore;
     private String workerName;
     private boolean isAdder;
+
 
     public Worker(Semaphore semaphore, String workerName, boolean isAdder) {
         this.semaphore = semaphore;
