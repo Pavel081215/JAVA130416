@@ -6,7 +6,7 @@ import java.util.concurrent.Phaser;
 
 public class SumSquare implements SquareSum {
 
-    protected final Phaser phaser = new Phaser(4);
+
     public volatile static long resultNew = 0;
     private int step;
     private List<Worker> tasks = new ArrayList<>();
@@ -15,7 +15,7 @@ public class SumSquare implements SquareSum {
     @Override
     public long getSquareSum(int[] values, int numberOfThreads) throws ArrayLessOfThreadNumberExceptions, InterruptedException {
         resultNew = 0;
-
+        final Phaser phaser = new Phaser(numberOfThreads+1);
         step = computation.calculationStepArray(values, numberOfThreads);
         int[] index = computation.arrayIndicesForDividingMainBody(values, numberOfThreads, step);
         for (int i = 0; i < numberOfThreads; i++) {

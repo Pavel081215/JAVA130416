@@ -17,7 +17,7 @@ public class SumSquareTest {
     }
 
 
-    @Test(invocationCount = 100, threadPoolSize = 1)
+    @Test(invocationCount = 50, threadPoolSize = 1)
 
     public synchronized void testGetSquareSum1() throws Exception {
         SumSquare sumSquare1 = new SumSquare();
